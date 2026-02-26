@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-19 20:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: niko <EMAIL@ADDRESS>\n"
+"Language-Team: niko\n"
+"Language: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Ability"
+msgid_plural "Abilities"
+msgstr[0] "Capacité"
+msgstr[1] "Capacités"
+
+
+msgid "Focus"
+msgid_plural "Foci"
+msgstr[0] "Focus"
+msgstr[1] "Foci"
+
+
+msgid "Type"
+msgid_plural "Types"
+msgstr[0] "Type"
+msgstr[1] "Types"
+
+msgid "Flavor"
+msgid_plural "Flavors"
+msgstr[0] "Préférence"
+msgstr[1] "Préférences"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Tier"
+msgstr "Rang"
+
+msgid "Stat"
+msgid_plural "Stats"
+msgstr[0] "Caractéristique"
+msgstr[1] "Caractéristiques"
+

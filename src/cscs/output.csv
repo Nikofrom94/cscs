@@ -1,0 +1,1105 @@
+id,name_en,cs_page,tier,categories
+13165,Ship Footing,182,M,15
+13166,Infuse Spirit,153,H,5
+13167,Absorb Energy,108,H,13
+13168,Absorb Kinetic Energy,108,L,10
+13169,Absorb Pure Energy,108,M,10
+13170,Improved Absorb Kinetic Energy,151,M,8
+13171,Temporal Acceleration,190,M,"10,15"
+13172,Up to Speed,195,M,"9,14"
+13173,Enable Others,133,L,14
+13174,Community Activist,121,L,3
+13175,Adaptation,108,H,6
+13176,Water Adaptation,196,L,5
+13177,Microgravity Adept,162,L,15
+13178,Maneuvering Adept,160,H,8
+13179,Heads-Up Display,148,L,"1,11,15"
+13180,Machine Affinity,159,L,15
+13181,Asserting Your Privilege,110,H,13
+13182,Agent Provocateur,109,M,15
+13183,Enlarge,135,L,16
+13184,Freakishly Large,143,L,15
+13185,Aggression,109,L,13
+13186,Friendly Help,143,L,14
+13187,Goad,145,L,3
+13188,Wing Weapons,199,L,
+13189,Wings of Fire,199,M,9
+13190,Void Wings,196,L,9
+13191,Go to Ground,145,H,8
+13192,Ignition,150,M,13
+13193,Body Morph,115,L,
+13194,Group Friendship,147,H,12
+13195,Amplify Sounds,109,H,"11,15"
+13196,Machine Enhancement,159,H,8
+13197,Robot Improvement,179,M,8
+13198,Enhance Strength,134,M,15
+13199,Animal Scrying,109,M,
+13200,Lab Analysis,157,L,7
+13201,Anecdote,109,L,14
+13202,Undo,195,H,"13,14"
+13203,Negate Danger,165,H,5
+13204,Nullify Sound,166,M,6
+13205,Anticipation,110,L,15
+13206,Anticipate Attack,110,M,10
+13207,Soothe Mind and Body,184,M,15
+13208,Soothe the Savage,184,L,3
+13209,Device Insight,128,M,7
+13210,Beast Call,112,H,2
+13211,Call Through Time,118,H,2
+13212,Call the Storm,117,H,13
+13213,Call dead spirit,117,H,2
+13214,Call Otherworldly Spirit,117,H,2
+13215,Call Swarm,118,M,2
+13216,Applying your Knowledge,110,M,14
+13217,Learning the Path,157,L,15
+13218,Learned a Few Things,157,H,15
+13219,Defending Weapon,126,M,
+13220,Charge Weapon,119,L,
+13221,Enchanted Weapon,"(GF, 31)(CTS, 52)",L,
+13222,Weapon and Body,196,H,13
+13223,Weaponization,197,M,8
+13224,Built-In Weaponry,116,M,13
+13225,Fusion Armor,144,M,10
+13226,Field-Reinforced Armor,139,H,10
+13227,Ice Armor,150,L,10
+13228,Resilient Ice Armor,176,M,"8,10"
+13229,Wind Armor,199,L,10
+13230,Powered Armor,171,L,10
+13231,Living Armor,158,M,2
+13232,Electric Armor,133,M,10
+13233,Crafter,122,L,15
+13234,Poison Crafter,170,M,"4,10"
+13235,Expert Crafter,137,M,4
+13236,Natural Crafter,165,L,"4,8"
+13237,Dreamcraft,132,L,6
+13238,Confidence Artist,121,M,15
+13239,Trick Driver,194,H,"5,8,15"
+13240,Onslaught,167,L,13
+13241,Able Assistance,108,H,14
+13242,Robot Assistant,178,L,2
+13243,Assume Control,111,H,3
+13244,Subtle Tricks,187,H,8
+13245,Athlete,111,L,15
+13246,Stun Attack,187,H,13
+13247,Better Surprise Attack,113,M,13
+13248,Spin Attack,185,H,13
+13249,Acrobatic Attack,108,M,13
+13250,Attack Flourish,111,L,14
+13251,Blinding Attack,115,H,13
+13252,Phased Attack,170,M,13
+13253,Enhanced Phased Attack,135,H,8
+13254,Disarming Attack,129,H,"8,13"
+13255,Answering Attack,110,M,13
+13256,Psychokinetic Attack,172,H,13
+13257,Rapid Attack,174,M,13
+13258,Jump Attack,156,H,13
+13259,Successive Attack,187,L,13
+13260,Surprise Attack,188,L,13
+13261,Dazing Attack,125,M,13
+13262,Eye Gouge,138,L,13
+13263,Attack and Attack Again,111,H,13
+13264,Demeanor of Command,127,L,12
+13265,Damn the Guilty,124,H,8
+13266,Augment Cypher,111,L,8
+13267,Range Increase,174,L,8
+13268,Defensive Augmentation,127,H,10
+13269,Damage Dealer,124,H,8
+13270,Foul Aura,143,H,13
+13271,Flash Across the Miles,141,H,9
+13272,Autodoctor,111,L,15
+13273,Enhanced Might Edge,135,M,8
+13274,Improved Edge,151,M,8
+13275,Enhanced Speed Edge,135,M,8
+13276,Enhanced Intellect Edge,135,M,8
+13277,Advantage to Disadvantage,109,L,13
+13278,Advantages of Being Big,109,L,15
+13279,Advantages of Being Small,109,L,
+13280,Perks of Stardom,169,L,12
+13281,"Have Spacesuit, Will Travel",148,L,10
+13282,Babel,112,L,7
+13283,Band of Desperados,112,H,2
+13284,Band of Followers,112,H,2
+13285,Force Field Barrier,143,M,"6,10"
+13286,Sound Conversion Barrier,184,L,10
+13287,Teleportive Wound,190,H,
+13288,Quick Block,173,L,10
+13289,Block,115,L,10
+13290,Block for Another,115,H,14
+13291,Misdirect Blame,163,L,12
+13292,Good Advice,145,L,"14,15"
+13293,Boost Manifest Cypher Function,"CTS, 51",H,
+13294,Boost Manifest Cypher,"CTS, 51",L,
+13295,Time Loop,192,M,2
+13296,Shield Burst,182,H,8
+13297,Magic Shield,159,L,10
+13298,Force Field Shield,143,L,10
+13299,Warding Shield,196,L,10
+13300,Enveloping Shield,136,L,10
+13301,Bouncing Shield,115,H,13
+13302,Energized Shield,134,M,8
+13303,Burst of Escape,116,H,8
+13304,Tinker,192,L,8
+13305,Artifact Tinkerer,110,L,8
+13306,Shatter Mind,182,H,13
+13307,Shatter,182,L,13
+13308,Break the line,116,M,11
+13309,Break the ranks,116,H,13
+13310,Break their Mind,116,H,13
+13311,Stone Breaker,186,M,8
+13312,Scramble Machine,179,L,13
+13313,Blessing of the Gods,114,L,
+13314,Calm,118,M,3
+13315,Wild Camouflage,198,H,16
+13316,Sensor,181,M,11
+13317,Improved Sensor,152,M,8
+13318,Captivate With Starshine,118,M,3
+13319,Captivate or Inspire,118,M,3
+13320,Moon Shape,164,M,16
+13321,Breaker,116,L,15
+13322,Nightmare,165,H,13
+13323,Rider,178,M,15
+13324,Enhanced Speed,135,M,8
+13325,Greater Enhanced Speed,146,M,8
+13326,Center of Attention,119,M,13
+13327,Uncanny Luck,194,M,8
+13328,Flesh of Stone,141,L,10
+13329,War Flesh,196,L,
+13330,Chamber of Dreams,119,H,9
+13331,Field of Destruction,139,L,10
+13332,Force Field,143,L,14
+13333,Field of Gravity,139,M,6
+13334,Reinforcing Field,175,H,8
+13335,Resonance Field,176,L,"10,13"
+13336,Defensive Field,127,H,10
+13337,Magnetic Field,159,M,10
+13338,Reactive Field,174,H,10
+13339,Gambler,144,H,8
+13340,Greater Controlled Change,146,M,16
+13341,Face Morph,138,L,16
+13342,Spin Identity,185,L,16
+13343,Quick Switch,174,M,
+13344,Change the Paradygm,119,H,3
+13345,Charge,119,L,8
+13346,Drain Charge,131,M,"5,13"
+13347,Charging Horde,119,H,8
+13348,Wind Chariot,199,H,9
+13349,Natural Charisma,165,L,15
+13350,Charm Machine,119,L,3
+13351,Machine Hunting,159,L,15
+13352,Driver,132,L,15
+13353,Expert Driver,137,M,15
+13354,Experienced Finder,136,M,11
+13355,Bash,112,L,13
+13356,Shock,183,L,13
+13357,Controlled Fall,122,M,9
+13358,Safe Fall,179,L,10
+13359,Hard Target,148,H,10
+13360,Swipe,188,L,13
+13361,Slippery Customer,183,M,8
+13362,Defensive Blinking,127,M,
+13363,Trained Basher,193,M,15
+13364,Specialized Basher,185,H,1
+13365,Information Gathering,153,H,7
+13366,Colossal,120,H,16
+13367,Space Fighting,184,M,8
+13368,Horde Fighting,149,M,10
+13369,Aquatic Combatant,110,M,5
+13370,Robot Fighter,178,M,"1,10"
+13371,Mobile Fighter,163,M,9
+13372,Unarmored Fighter,194,L,10
+13373,Command,120,M,3
+13374,Advanced Command,108,H,3
+13375,Command Beast,120,M,
+13376,Command Metal,120,H,16
+13377,Command Spirit,121,M,3
+13378,Command Machine,120,M,3
+13379,Jury-Rig,156,H,4
+13380,Like the Back of Your Hand,158,H,15
+13381,As Foretold in Prophecy,110,H,"1,15"
+13382,Bolt Rider,115,L,9
+13383,As If One Creature,110,H,2
+13384,How Others Think,149,L,15
+13385,Communication,121,L,7
+13386,Tree Companion,194,M,
+13387,Improved Machine Companion,152,H,"2,8"
+13388,Improved Companion,151,H,2
+13389,Fellow Explorer,139,M,2
+13390,Machine Companion,159,M,2
+13391,Flying Companion,"(CTS, 53)",M,
+13392,Dimensional Squeeze,128,L,
+13393,Understanding,194,L,15
+13394,Skill With Attacks,183,M,"1,15"
+13395,Flex Weapon Skill,141,M,
+13396,Expert Skill,137,M,8
+13397,Effective Skill,133,H,8
+13398,Greater Skill With Attacks,147,H,1
+13399,Greater Skill With Defense,147,M,1
+13400,Skill With Defense,183,L,10
+13401,Extra Skill,138,L,15
+13402,Heightened Skills,149,M,15
+13403,Assassin Skills,110,L,15
+13404,Investigative Skills,155,L,15
+13405,Interaction Skills,155,L,15
+13406,Travel Skills,193,L,15
+13407,Knowledge Skills,157,L,15
+13408,Flex Skill,141,M,15
+13409,Stealth Skills,186,L,15
+13410,Multiple Skills,165,H,15
+13411,Physical Skills,170,L,15
+13412,Vacuum Skilled,196,L,15
+13413,Tech Skills,189,L,15
+13414,Concussion,121,H,13
+13415,Driving on the Edge,132,L,8
+13416,Confuse Enemy,121,M,10
+13417,Conjuration,121,H,2
+13418,Community Knowledge,121,L,7
+13419,Knowledge of the Law,157,L,15
+13420,Monster Lore,164,L,"7,15"
+13421,Ruin Lore,179,L,15
+13422,Divine Knowledge,130,L,15
+13423,Bestiary Knowledge,113,L,15
+13424,Flex Lore,141,L,15
+13425,Wilderness Lore,199,L,15
+13426,Know Their Faults,156,M,7
+13427,Knowing,156,L,15
+13428,Knowing the Unknown,156,H,7
+13429,Connected,121,L,12
+13430,Awareness,111,M,11
+13431,Total Awareness,192,H,15
+13432,Advice from a Friend,109,L,14
+13433,Deep Consideration,126,H,7
+13434,Fortification Builder,143,L,4
+13435,Robot Builder,178,L,4
+13436,Underworld Contacts,195,L,12
+13437,Fight On,139,M,5
+13438,Contortionist,121,L,"9,15"
+13439,Bypass Barrier,116,M,9
+13440,Counter Danger,122,M,10
+13441,Countermeasures,122,M,10
+13442,Control Machine,121,H,3
+13443,Control Weather,122,H,6
+13444,Control Swarm,122,L,2
+13445,Crowd Control,123,M,3
+13446,Controlled Change,122,L,16
+13447,Robot Control,178,L,3
+13448,Mind Control,162,M,3
+13449,Perfect Control,169,H,"8,16"
+13450,Control the Savage,122,H,3
+13451,Control the Field,121,L,13
+13452,Hand to Eye,148,L,15
+13453,Buddy System,116,M,14
+13454,Improved Copying,151,M,
+13455,Multiple Copying,164,H,
+13456,Amazing Copying,109,H,
+13457,Dark Matter Shell,124,M,"10,15"
+13458,Enhanced Body,134,L,"8,10"
+13459,Crystalline Body,123,L,"5,8,10"
+13460,Golem Body,145,L,"8,10"
+13461,Wooden Body,199,L,
+13462,Dazzling Sunburst,125,L,13
+13463,Brute Strike,116,H,
+13464,Finishing Blow,140,H,13
+13465,Crushing Blow,123,L,8
+13466,Precise Cut,171,M,8
+13467,Noble's Courage,166,M,5
+13468,Courageous,122,L,"10,15"
+13469,Runner,179,M,9
+13470,Run and Fight,179,M,13
+13471,Obstacle Running,167,M,9
+13472,Sprint and Grab,186,M,13
+13473,Shattering Shout,182,M,13
+13474,Ice Creation,150,M,4
+13475,Bound Magic Creature,115,L,2
+13476,Create,122,H,4
+13477,Create Water,123,L,6
+13478,Create Deadly Poison,123,L,4
+13479,Fire Bloom,140,M,13
+13480,Curious,123,L,8
+13481,Recycled Cyphers,175,H,8
+13482,Impetus,151,L,6
+13483,Datajack,124,L,15
+13484,Junkmonger,156,L,4
+13485,Call In Favor,117,H,2
+13486,From the Shadows,144,M,8
+13487,Hard Choices,148,L,15
+13488,Destined for Greatness,127,L,5
+13489,Destroyer,127,H,13
+13490,Dual Light Wield,132,L,13
+13491,Dual Medium Wield,132,M,13
+13492,Two Things at Once,194,H,8
+13493,Go Defensive,145,L,10
+13494,Cognizant Offense,119,M,1
+13495,Diamagnetism,128,H,6
+13496,Gaming God,144,H,5
+13497,Hard to Distract,148,L,10
+13498,Hard to Hit,148,L,10
+13499,Hard to Kill,148,H,"8,10"
+13500,Hard to See,148,M,"15,16"
+13501,Telling,190,M,15
+13502,Expert Follower,137,M,2
+13503,Discipline of Watchfulness,129,H,8
+13504,Temporal Dislocation,190,M,9
+13505,Vanish,196,H,16
+13506,Distortion,130,L,10
+13507,Verbal Misdirection,196,M,15
+13508,Divide Your Mind,130,H,8
+13509,Dual Distraction,132,H,8
+13510,Dual Defense,132,M,10
+13511,Double Strike,131,L,8
+13512,Dual Wards,132,M,14
+13513,Drain Creature,131,L,"5,8"
+13514,Drain Machine,131,L,"5,13"
+13515,Drain Power,131,H,13
+13516,Drain at a Distance,131,M,8
+13517,Unraveling Consumption,195,M,5
+13518,Duel to the Death,132,H,"1,8"
+13519,Duplicate,132,L,2
+13520,Illusory Duplicate,150,L,6
+13521,Resilient Duplicate,176,L,2
+13522,Superior Duplicate,188,M,2
+13523,Tough As Nails,192,M,5
+13524,Energize Object,134,L,8
+13525,Debate,126,L,"12,15"
+13526,Decipher,126,L,7
+13527,Shred Existence,183,H,8
+13528,Slice,183,M,13
+13529,Infer Thoughts,153,H,11
+13530,Defend the Innocent,126,L,14
+13531,Defend All the Innocent,126,M,14
+13532,Weapon Defense,197,L,10
+13533,Defense Against Robots,126,L,10
+13534,Inner Defense,154,L,15
+13535,Subconscious Defense,187,M,10
+13536,Devoted Defender,128,L,15
+13537,Experienced Defender,136,M,10
+13538,Combat Challenge,120,M,14
+13539,Final Defiance,139,H,5
+13540,Define Down,127,M,6
+13541,Wreck,200,L,8
+13542,Disguise,129,L,15
+13543,Illusory Disguise,150,L,16
+13544,Disguise Other,129,M,
+13545,Lethal Damage,158,H,8
+13546,Outwit,168,M,8
+13547,Foil Danger,142,L,5
+13548,Impressive Display,151,L,15
+13549,Disincentivize,129,L,13
+13550,Move Mountains,164,H,6
+13551,Move Metal,164,L,6
+13552,Deactivate Mechanisms,125,H,13
+13553,Defuse Situation,127,H,3
+13554,Designation,127,L,15
+13555,Improved Designation,151,L,8
+13556,Greater Designation,146,M,8
+13557,Detect Life,128,M,11
+13558,Sleuth,183,L,15
+13559,Increasing Determination,153,M,15
+13560,Biomorphic Detonation,113,H,13
+13561,Phase Detonation,169,M,13
+13562,Misdirect,163,L,13
+13563,Divert Attacks,130,M,10
+13564,Destroy Metal,127,M,13
+13565,Deflect Attacks,127,L,10
+13566,Echolocation,133,M,11
+13567,Bolts of Power,115,M,13
+13568,Enlightened,136,L,15
+13569,Erase Memories,136,L,13
+13570,Increased Effects,153,M,8
+13571,Machine Efficiency,159,L,"4,8"
+13572,Coordinated Effort,122,H,"8,15"
+13573,Amazing Effort,109,M,8
+13574,Strategize,187,M,8
+13575,Get Away,145,L,9
+13576,Embrace the Night,133,H,13
+13577,Fast Talk,138,L,3
+13578,Cloud Personal Memories,119,L,3
+13579,Ambusher,109,M,13
+13580,In Harm's Way,152,M,14
+13581,Outside Reality,168,H,16
+13582,Blink of an Eye,115,M,9
+13583,Again and Again,109,H,8
+13584,Encouragement,134,L,14
+13585,Wilderness Encouragement,198,M,5
+13586,Endurance,134,L,5
+13587,Energize Creature,134,H,"10,14"
+13588,Energize Crowd,134,H,"10,14"
+13589,Huge,149,M,"8,10,16"
+13590,Investigate,155,L,15
+13591,Investigator,155,L,8
+13592,Teach Trick,189,H,14
+13593,Sensing Package,181,M,"11,15"
+13594,Entourage,136,L,2
+13595,Shield Training,182,M,10
+13596,Task Training,189,L,15
+13597,Guild Training,147,M,8
+13598,Magical Training,159,H,
+13599,Trained Without Armor,193,L,10
+13600,Work the Friendship,200,H,14
+13601,Enthrall,136,L,13
+13602,Trained Slayer,193,M,15
+13603,Predictive Equation,171,L,15
+13604,Balance,112,L,15
+13605,Insect Eruption,154,H,2
+13606,Agile Wit,109,H,8
+13607,Spirit Accomplice,185,L,2
+13608,Reading the Room,175,M,7
+13609,Wraith Cloak,200,M,10
+13610,Improved Command Spirit,151,H,8
+13611,Mind of a Leader,162,H,7
+13612,Mind for Might,162,L,8
+13613,Closed Mind,119,L,10
+13614,Open Mind,167,L,15
+13615,Discerning Mind,129,M,10
+13616,Versatile Mind,196,M,10
+13617,Evasion,136,H,10
+13618,Dodge and Resist,131,M,8
+13619,Dodge and Respond,131,M,"10,13"
+13620,Deadly Swarm,125,H,2
+13621,Do You Know Who I Am?,131,H,13
+13622,Thrust,191,L,13
+13623,Quick Study,174,L,15
+13624,Evanesce,136,M,16
+13625,Escape,136,L,5
+13626,Illusory Evasion,150,M,10
+13627,Flight not Fight,141,L,10
+13628,Microgravity Avoidance,162,H,10
+13629,Robot Evolution,178,H,8
+13630,Exile,136,M,13
+13631,Explains the Ineffable,137,H,15
+13632,Exploit Advantage,137,H,15
+13633,Superb Explorer,188,L,15
+13634,Wilderness Explorer,199,L,6
+13635,Dark Explorer,124,H,"11,15"
+13636,Overawe,168,M,13
+13637,Concussive Blast,121,L,13
+13638,Force Blast,142,M,13
+13639,Cold Burst,119,H,13
+13640,Exploratory Experience,137,L,15
+13641,Experienced in Armor,136,M,"8,10"
+13642,Wrest From Chance,200,M,8
+13643,Weapon Crafter,197,L,4
+13644,Inspiring Ease,154,L,14
+13645,One With the Wild,167,M,"5,8"
+13646,Thunder Beam,191,L,13
+13647,Trust to Luck,194,M,8
+13648,Weather the Vicissitudes,197,L,10
+13649,Familiarize,138,L,11
+13650,Ghost,145,M,"9,15"
+13651,Feint,139,M,13
+13652,Fire and Ice,140,M,13
+13653,Grasping Foliage,146,L,"6,13"
+13654,Blood Fever,115,M,"1,10"
+13655,Flash,140,L,13
+13656,Restorative Bloom,177,H,
+13657,Robot Fleet,179,H,2
+13658,Monster Bane,164,L,8
+13659,Improved Monster Bane,152,M,8
+13660,Heroic Monster Bane,149,M,8
+13661,Force to Reckon With,143,M,6
+13662,Entangling Force,136,L,13
+13663,Force and Accuracy,143,H,8
+13664,Force at Distance,143,M,13
+13665,Magic Training,159,L,15
+13666,Animal Shape,"(GF, 29)(CTS, 49)",L,
+13667,Bigger Animal Shape,113,M,
+13668,Beast Form,112,L,16
+13669,Greater Beast Form,146,M,8
+13670,Enhanced Beast Form,134,H,8
+13671,Bigger Beast Form,113,M,16
+13672,Dreadwood,"GF, 31",H,
+13673,Power Crash,"(GF, 32)(CTS, 54)",L,
+13674,Power Strike,171,M,13
+13675,Assassin Strike,110,H,13
+13676,Force Bash,142,L,13
+13677,Dark Matter Strike,124,M,13
+13678,Debilitating Strike,126,M,13
+13679,Disarming Strike,129,M,"8,13"
+13680,Deadly Strike,125,H,13
+13681,Nightstrike,166,M,15
+13682,Quick Strike,174,M,13
+13683,Frenzy,143,L,8
+13684,Greater Frenzy,146,M,8
+13685,Resonant Frequency,177,H,
+13686,Flee,141,H,3
+13687,Fury,144,M,8
+13688,Shepherd's Fury,182,M,8
+13689,Sneak,183,L,15
+13690,Fusion,144,M,8
+13691,Embraced by Darkness,133,H,9
+13692,Castigate,118,M,13
+13693,Gain Unusual Companion,144,M,2
+13694,Winter Gauntlets,199,H,"8,13"
+13695,Gargantuan,144,H,16
+13696,Battle Management,112,H,14
+13697,Slippery,183,L,15
+13698,Storm Seed,187,M,6
+13699,Seeds of Fury,181,L,13
+13700,Far Step,138,L,9
+13701,Great Tree,146,H,
+13702,Grand Deception,146,M,3
+13703,Gravity Cleave,146,M,13
+13704,Improved Gravity Cleave,151,H,8
+13705,Subsonic Rumble,187,H,15
+13706,Tall Tale,189,M,13
+13707,Capable Warrior,118,M,8
+13708,Dragon's Maw,131,H,2
+13709,Deep Water Guide,126,L,15
+13710,Biomorphic Healing,113,M,5
+13711,Golem Healing,145,L,16
+13712,Generate Force Field,145,H,6
+13713,Movement Skills,164,L,15
+13714,Inhabit Crystal,154,M,11
+13715,Hacker,147,L,8
+13716,Hack the Impossible,147,L,3
+13717,Out of Harm's Way,167,L,10
+13718,Hemorrhage,149,L,13
+13719,Ignore Affliction,150,M,5
+13720,Ignore the Pain,150,L,5
+13721,Grandiose Illusion,146,H,6
+13722,Major Illusion,160,M,6
+13723,Minor Illusion,162,L,6
+13724,Permanent Illusion,169,H,6
+13725,Illusory Selves,150,M,6
+13726,Terrifying Image,190,H,6
+13727,Immovable,150,M,"5,8"
+13728,Improvise,152,M,15
+13729,Unmovable,195,M,5
+13730,Incredible Feat of Science,153,H,
+13731,Incredible Recovery,153,H,5
+13732,Infiltrator,153,L,15
+13733,Superb Infiltrator,188,L,15
+13734,Influence Swarm,153,L,2
+13735,Informer,153,M,12
+13736,Creature Insight,123,M,7
+13737,Innovator,154,H,4
+13738,Elusive,133,L,8
+13739,Inspiration,154,H,"5,14"
+13740,Late Inspiration,157,L,15
+13741,Inspire Coordinated Actions,154,H,14
+13742,Inspire Aggression,154,L,"14,15"
+13743,Inspire Action,154,L,14
+13744,Inspire the Innocent,154,H,5
+13745,Danger Instinct,124,L,9
+13746,Wild Insight,198,H,
+13747,Greater Enhanced Intellect,146,M,8
+13748,Enhanced Intellect,135,M,8
+13749,Intense Interaction,155,M,15
+13750,Interface,155,L,15
+13751,Machine Interface,159,L,15
+13752,Distant Interface,130,L,8
+13753,Intelligent Interface,155,M,15
+13754,Trained Interlocutor,193,L,15
+13755,Soul Interrogation,184,M,7
+13756,Question the Spirits,173,L,7
+13757,Interruption,155,M,3
+13758,Divine Intervention,130,H,13
+13759,Untouchable,195,H,10
+13760,Untouchable While Moving,195,H,10
+13761,Inventor,155,H,8
+13762,Invisibility,155,H,16
+13763,Multi-Vanish,164,M,
+13764,Invisible Phasing,155,M,16
+13765,Summon Demon,188,H,2
+13766,Summon Giant Spider,188,M,2
+13767,Blameless,113,L,15
+13768,Mind Games,162,M,13
+13769,Play to the Crowd,170,M,14
+13770,Gamer,144,L,15
+13771,Juggernaut,156,H,9
+13772,Just a Bit Mad,156,L,10
+13773,Knock Out,156,M,13
+13774,Thief's Luck,191,H,8
+13775,Knowledge Is Power,156,M,15
+13776,Memory Becomes Action,161,H,
+13777,The Wild is On Your Side,190,H,6
+13778,Flameblade,140,M,8
+13779,Cypher Casting,"GF, 29",L,
+13780,Hurl Flame,149,L,13
+13781,Throw,191,M,13
+13782,Cast Illusion,118,M,8
+13783,Iron Punch,155,H,13
+13784,Quick Throw,174,L,13
+13785,Throw Force Shield,191,M,13
+13786,Throw Enchanted Weapon,191,M,
+13787,Specialized Throwing,185,M,1
+13788,Brainwashing,116,H,3
+13789,Sea Legs,180,M,15
+13790,Dream Becomes Reality,132,M,4
+13791,Mind Reading,162,L,7
+13792,Crystal Lens,123,M,13
+13793,Game Lessons,144,L,15
+13794,Life Lessons,158,L,15
+13795,Machine Bond,159,M,8
+13796,Free to Move,143,H,5
+13797,Release Energy,175,L,13
+13798,Explosive Release,138,H,13
+13799,Poetic License,170,L,15
+13800,Improved Object Bond,152,M,"2,13"
+13801,Object Bond,167,L,8
+13802,Mental Link,161,L,11
+13803,Link Senses,158,L,11
+13804,Read the Signs,174,H,7
+13805,Weighty,197,L,13
+13806,Automatic Glow,"CTS, 49",L,
+13807,Burning Light,116,M,13
+13808,Cutting Light,123,L,13
+13809,Sunlight,188,M,6
+13810,Harder Light,148,M,
+13811,Improved Sculpt Light,152,H,4
+13812,Temporary Light,190,L,
+13813,Living Light,158,H,9
+13814,Levity,158,L,15
+13815,Blind Machine,114,H,13
+13816,Hedge Magic,149,L,6
+13817,Faster Wild Magic,139,M,
+13818,Fiery Hand of Doom,139,M,2
+13819,Healing Touch,149,L,5
+13820,Greater Healing Touch,147,H,5
+13821,Stay the Course,186,H,5
+13822,Master Crafter,160,M,15
+13823,Weapon Master,197,L,8
+13824,Defense Master,127,H,"10,13"
+13825,Master Entertainer,160,H,15
+13826,Master of Unarmed Fighting Style,160,H,1
+13827,Master Thief,160,L,15
+13828,Master Cypher Use,160,H,8
+13829,Mastery with Defense,161,H,10
+13830,Master Identifier,160,L,15
+13831,Cyphersmith,124,M,8
+13832,Master Machine,160,H,"8,11"
+13833,Mastery with Attacks,161,H,1
+13834,Object Bond Mastery,167,H,2
+13835,Tool Mastery,192,L,15
+13836,Shield Master,182,L,10
+13837,Mastery in Armor,161,H,10
+13838,Extreme Mastery,138,H,8
+13839,Cloak of Opportunity,119,M,10
+13840,Shroud of Flame,183,L,10
+13841,Dark Matter Shroud,124,M,10
+13842,Impossible Walk,151,H,9
+13843,Sailor,179,L,15
+13844,Mask,160,H,16
+13845,Further Mathematics,144,H,15
+13846,Higher Mathematics,149,L,15
+13847,Maximize Cypher,161,H,
+13848,Lead From the Front,157,L,8
+13849,Mentally Tough,162,L,10
+13850,Lead by Inquiry,157,M,14
+13851,All-Out Con,109,H,8
+13852,Phase Foe,170,H,13
+13853,Fast Kill,138,M,8
+13854,Murderer,165,H,13
+13855,Better Living Through Chemistry,113,M,8
+13856,Tiny,192,H,
+13857,Robot Upgrade,179,M,4
+13858,Masterful Armor Modification,160,H,"2,8,9,10"
+13859,Modify Device,164,L,"4,8"
+13860,Modify Artifact Power,163,H,"4,8"
+13861,Modify Cyphers,"(CTS, 54)",M,
+13862,Predictive Model,171,L,7
+13863,Magnificent Moment,159,H,15
+13864,Momentum,164,M,13
+13865,Show Them the Way,183,H,3
+13866,Mount,164,M,2
+13867,Confounding Banter,121,M,10
+13868,Quick Death,173,L,8
+13869,Word of Command,199,H,3
+13870,Word of Death,200,H,13
+13871,Enchanted Movement,"(GF, 31)(CTS, 52)",H,
+13872,Tumbling Moves,194,M,10
+13873,Multiple Quarry,163,H,8
+13874,Multiplicity,165,H,"2,8"
+13875,Wall With Teeth,196,M,8
+13876,Force Wall,143,H,6
+13877,Granite Wall,146,H,6
+13878,Wall of Lightning,196,H,6
+13879,Protective Wall,172,H,13
+13880,Living Wall,158,M,6
+13881,Muscles of Iron,165,L,15
+13882,Passing Mechanic,168,M,15
+13883,Disable Mechanisms,128,M,13
+13884,Power Memory,"CTS, 55)",H,
+13885,Swim,188,M,9
+13886,Nimble Swimmer,166,M,10
+13887,Trained Swimmer,193,L,15
+13888,Never Fumble,165,M,8
+13889,Privileged Nobility,172,L,"12,15"
+13890,Mist Cloud,163,L,
+13891,Matter Cloud,161,M,"10,13"
+13892,Necromancy,165,L,2
+13893,Greater Necromancy,147,M,2
+13894,Negotiate,165,L,12
+13895,Sniper's Aim,184,M,
+13896,Sharp-Eyed,182,M,15
+13897,Targeting Eye,189,M,15
+13898,Eye for Detail,138,L,7
+13899,Opportunist,167,L,13
+13900,Speaker for the Dead,184,L,7
+13901,Shipspeak,183,M,2
+13902,Parry,168,H,10
+13903,Perfect Stranger,169,M,"8,12"
+13904,Share Defense,181,H,14
+13905,Share Senses,182,L,11
+13906,Share the Power,182,H,5
+13907,No Need for Weapons,166,L,8
+13908,Not Dead Yet,166,H,5
+13909,Subtle Steps,187,M,15
+13910,Psychic Passenger,172,H,3
+13911,Pay It Forward,168,M,14
+13912,Thinking Ahead,191,M,5
+13913,Think Your Way Out,191,M,8
+13914,Pry Open,172,M,13
+13915,Weird Science Breakthrough,197,H,8
+13916,Lost in the Chaos,159,H,10
+13917,Vindictive Performance,196,H,13
+13918,No One Knows Better,166,H,15
+13919,Insight,154,L,15
+13920,Opening Statement,167,L,15
+13921,Critter Companion,123,L,2
+13922,Small Flight,183,M,
+13923,Defensive Phasing,127,L,10
+13924,Enhanced Physique,135,M,8
+13925,Greater Enhanced Physique,146,M,8
+13926,Physically Gifted,170,H,8
+13927,Fleet of Foot,141,L,8
+13928,Trained Excavator,193,L,15
+13929,Artifact Scavenger,110,H,8
+13930,Pilot,170,L,15
+13931,Expert Pilot,137,M,15
+13932,Inferno Trail,153,H,6
+13933,Tracker,193,L,15
+13934,Golem Stomp,145,M,13
+13935,Hidden Closet,149,L,6
+13936,Escape Plan,136,H,8
+13937,Meticulous Planner,162,M,15
+13938,Diver,130,L,5
+13939,Stronger Together,187,M,2
+13940,Bigger,113,L,16
+13941,Smaller,183,L,
+13942,Quicker Than Most,174,L,15
+13943,Phased Pocket,170,L,16
+13944,Weight of the World,197,H,13
+13945,Elastic Grip,133,L,
+13946,Iron Fist,155,M,8
+13947,Fists of Fury,140,L,8
+13948,Phase Door,170,M,9
+13949,Make Judgment,160,L,15
+13950,Wear It Well,197,H,10
+13951,Trapster,193,L,4
+13952,Fortified Position,143,L,10
+13953,Enhanced Potential,135,M,8
+13954,Greater Enhanced Potential,146,M,8
+13955,Dust to Dust,133,H,13
+13956,Push,173,L,13
+13957,Copy Power,122,L,
+13958,Innate Power,154,L,
+13959,Wildcard Powers,198,L,
+13960,Practiced With All Weapons,171,M,1
+13961,Practiced With Medium Weapons,171,L,1
+13962,Practiced With Guns,171,L,1
+13963,Practiced in Armor,171,L,10
+13964,Practiced With Swords,171,L,1
+13965,Wound Tender,200,L,15
+13966,Taking Advantage,188,L,"13,15"
+13967,Seize the Initiative,181,H,8
+13968,Take Command,188,M,14
+13969,Legerdemain,157,L,6
+13970,Golem Grip,145,L,13
+13971,Action Processor,108,M,15
+13972,Computer Programming,121,L,15
+13973,Quarry,173,L,"1,15"
+13974,Projection,172,M,6
+13975,Psychic Burst,172,M,13
+13976,Mental Projection,161,H,9
+13977,Protector,172,L,14
+13978,Ward,196,L,10
+13979,Elemental Protection,133,M,"10,14"
+13980,Energy Protection,134,M,10
+13981,Combat Prowess,120,L,8
+13982,Taunt Foe,189,H,13
+13983,Precision,171,L,8
+13984,Precognition,171,H,"10,15"
+13985,Premonition,171,L,7
+13986,Encouraging Presence,134,L,14
+13987,Restful Presence,177,L,5
+13988,Terrifying Presence,190,L,3
+13989,Lend Animal Shape,"(GF, 32)(CTS, 53)",H,
+13990,Psychosis,172,M,13
+13991,Enhanced Might,135,M,8
+13992,Greater Enhanced Might,146,M,8
+13993,Coaxing Power,119,L,8
+13994,Healing Pulse,148,M,5
+13995,Spray,185,M,13
+13996,Punish the Guilty,173,M,8
+13997,Punish All the Guilty,173,H,13
+13998,Something in the Road,184,L,8
+13999,Divine Radiance,130,M,13
+14000,Rally to Me,174,L,14
+14001,Apportation,110,M,9
+14002,Improved Apportation,151,H,2
+14003,Pull a Fast One,173,M,15
+14004,Quick to Flee,174,L,15
+14005,Alley Rat,109,H,9
+14006,Scratch Existence,180,L,13
+14007,Ray of Confusion,174,L,13
+14008,Reload,176,L,8
+14009,Recruit Deputy,175,H,2
+14010,Gather Intelligence,144,L,7
+14011,Terrifying Gaze,190,H,13
+14012,Stare Them Down,186,L,10
+14013,Relocate,176,H,6
+14014,Reshape,176,H,4
+14015,Bolster Illusion,"(CTS, 51)",L,
+14016,Repel Metal,176,L,10
+14017,Spot Weakness,185,M,7
+14018,Deep Resources,126,M,8
+14019,Restore Life,177,H,5
+14020,Stand Watch,186,L,15
+14021,Hold Breath,149,L,8
+14022,Return to the Obelisk,177,H,9
+14023,Return to Sender,177,H,13
+14024,Powerful Rhetoric,171,L,"12,15"
+14025,Nothing but Defend,166,H,10
+14026,Sturdy,187,L,10
+14027,Hardiness,148,L,10
+14028,Ribbons of Dark Matter,178,L,13
+14029,Reaction,174,M,13
+14030,Resuscitate,177,H,5
+14031,Improved Recovery,152,L,5
+14032,Patient Recovery,168,L,
+14033,Salvage and Comfort,179,L,"7,15"
+14034,Rapid Recovery,174,H,5
+14035,Speedy Recovery,185,L,5
+14036,Extra Recovery,138,L,5
+14037,Fetch,139,L,6
+14038,Retrieve Memories,177,L,7
+14039,Rejeneration,175,M,5
+14040,Regenerate,175,H,5
+14041,Regenerate Other,175,H,14
+14042,Serv-0 Repair,181,L,15
+14043,Repair Flesh,176,L,5
+14044,Magical Repertoire,159,L,
+14045,Expanded Repertoire,136,L,
+14046,Outlaw Reputation,168,M,10
+14047,Fearsome Reputation,139,L,10
+14048,Sensor Array,181,M,7
+14049,Telepathic Network,190,H,7
+14050,Deep Reserves,126,H,"5,8"
+14051,Hidden Reserves,149,M,8
+14052,Resilience,176,M,10
+14053,Hard-Won Resilience,148,M,10
+14054,Poison Resistance,170,M,5
+14055,Energy Resistance,134,M,10
+14056,Resist Underwater Hazards,176,L,10
+14057,Resist the Elements,176,L,10
+14058,Resist Tricks,176,L,15
+14059,Shrink,183,L,
+14060,Shrink Others,183,H,
+14061,Reveal,178,L,"11,14"
+14062,Daydream,124,M,"3,6"
+14063,Drawing on Life's Experiences,131,H,7
+14064,Know Where to Look,156,M,8
+14065,Willing Sacrifice,199,M,"5,8"
+14066,Grab,146,M,13
+14067,Seize the Moment,181,M,8
+14068,Dirty Fighter,128,H,13
+14069,Ageless,109,M,
+14070,Beneath Notice,"CTS, 49",L,
+14071,Incredible Health,153,M,5
+14072,Miraculous Health,163,M,5
+14073,Spring Away,185=6,H,13
+14074,Amazing Leap,"(CTS, 48)",M,
+14075,Push Off and Throw,173,M,"8,13"
+14076,Teleportation Burst,190,M,
+14077,Scan,179,L,7
+14078,Oneirochemy,167,L,15
+14079,Sculpt Flesh,180,L,14
+14080,Sculpt Light,180,M,4
+14081,Lunge,159,M,8
+14082,Slip Into Shadow,183,L,6
+14083,Moving Like Water,164,M,10
+14084,Blend In,113,M,16
+14085,Sharp Senses,182,L,15
+14086,Danger Sense,124,L,15
+14087,Animal Senses and Sensibilities,109,M,"11,15"
+14088,Preternatural Senses,171,M,"5,15"
+14089,Wilderness Awareness,198,M,7
+14090,Sense Attitudes,181,L,15
+14091,Sense Ambush,181,L,11
+14092,Serv-0,181,L,2
+14093,Serv-0 Brawler,181,M,"1,15"
+14094,Serv-0 Defender,181,L,10
+14095,Serv-0 Spy,181,M,11
+14096,Serv-0 Scanner,181,M,7
+14097,Serv-0 Aim,181,M,"1,15"
+14098,Fire Servant,140,H,2
+14099,Silent as Space,183,M,15
+14100,Straightforward,187,L,15
+14101,Sun Siphon,188,H,13
+14102,Bloodlust,115,L,13
+14103,Minor Wish,162,M,"8,10,15"
+14104,Moderate Wish,163,H,"8,10,16"
+14105,Alleviate,109,L,5
+14106,Font of Healing,142,M,5
+14107,Phase Sprint,170,L,"9,10"
+14108,Task Specialization,189,M,15
+14109,Legal Intern,157,H,2
+14110,Stasis,186,L,13
+14111,Stimulate,186,H,14
+14112,Spur Effort,186,M,14
+14113,Store Energy,186,M,"5,8"
+14114,Lethal Ploy,158,H,13
+14115,Dark Matter Structure,124,H,4
+14116,Unarmed Fighting Style,194,L,1
+14117,Improved Success,152,H,8
+14118,Inspiring Success,154,H,14
+14119,Overcharge Device,168,H,8
+14120,Suggestion,188,H,3
+14121,Psychic Suggestion,172,M,3
+14122,Retinue,177,M,2
+14123,Basic Follower,112,L,2
+14124,Overcharge Energy,168,M,8
+14125,Overload Machine,168,L,8
+14126,Windwracked Traveler,199,H,9
+14127,Car Surfer,118,L,15
+14128,Windrider,199,M,9
+14129,Overcome All Obstacles,168,M,13
+14130,Cypher Surge,"GF, 29",M,
+14131,Speed Burst,185,M,8
+14132,Perfect Speed Burst,169,H,8
+14133,Surging Confidence,188,L,5
+14134,Mind Surge,162,H,5
+14135,Post-Apocalyptic Survivor,170,L,15
+14136,Outlast the Foe,167,M,"8,15"
+14137,Hover,149,L,9
+14138,Divine Symbol,131,H,13
+14139,Battlefield Tactician,112,H,11
+14140,Horde Tactics,149,H,8
+14141,Oratory,167,M,12
+14142,Celebrity Talent,119,L,15
+14143,Ice Storm,150,H,13
+14144,Tough It Out,193,M,10
+14145,Time Doppelganger,191,H,2
+14146,Arcane Flare,110,L,"8,13"
+14147,Trick Shot,194,M,13
+14148,Guide Bolt,147,M,8
+14149,Pierce,170,L,13
+14150,Snipe,183,M,"1,13"
+14151,Snap Shot,183,M,13
+14152,Special Shot,184,H,13
+14153,Overwatch,168,L,13
+14154,Weightless Shot,197,H,"8,13"
+14155,Careful Shot,118,L,8
+14156,Draw Conclusion,131,M,7
+14157,Gunner,147,L,8
+14158,Trained Gunner,193,M,15
+14159,Arc Spray,110,H,13
+14160,Twisting the Knife,194,H,13
+14161,Totally Chill,192,L,5
+14162,Frost Touch,144,L,13
+14163,Death Touch,125,H,13
+14164,Freezing Touch,143,M,13
+14165,Illuminating Touch,150,L,6
+14166,Disrupting Touch,129,L,13
+14167,Always Tinkering,109,L,
+14168,Still As a Statue,186,H,10
+14169,Tower of Will,193,M,"8,10"
+14170,Feat of Strength,139,L,15
+14171,Tower of Intellect,193,M,10
+14172,Whirlwind of Throws,198,H,13
+14173,Everything Is a Weapon,136,M,13
+14174,Betrayal,113,M,"8,12"
+14175,Unexpected Betrayal,195,L,12
+14176,Rapid Processing,174,M,"8,10,15"
+14177,Transcend the Script,193,H,14
+14178,Damage Transference,124,M,5
+14179,Impart Understanding,151,H,"8,14"
+14180,Impart Ideal,151,L,12
+14181,Stalker,186,L,15
+14182,Teamwork,189,L,14
+14183,Quick Work,174,L,"4,8"
+14184,Handy,148,L,15
+14185,Walk Through Walls,196,L,9
+14186,Traverse the Worlds,194,H,9
+14187,Resonant Quake,177,H,13
+14188,Earthquake,133,H,13
+14189,Third Eye,191,L,11
+14190,Roaming Third Eye,178,M,8
+14191,Wormhole,200,M,9
+14192,Find the Hidden,140,M,7
+14193,Find the Way,140,L,8
+14194,Find the Guilty,139,M,15
+14195,Trapfinder,193,M,11
+14196,Find an Opening,139,L,11
+14197,Very Long Sprinting,196,H,9
+14198,Remote Control,176,M,13
+14199,Telekinesis,189,L,6
+14200,Machine Telepathy,159,M,7
+14201,Mechanical Telepathy,161,M,7
+14202,Telepathic,189,L,7
+14203,Teleportation,190,H,9
+14204,Short Teleportation,183,M,
+14205,Jaunt,155,H,9
+14206,Medium Teleportation,161,H,
+14207,Ultra Enhancement,194,H,"8,10"
+14208,Twist of Fate,194,H,8
+14209,A Smile and a Word,108,L,8
+14210,Beast Companion,112,L,2
+14211,Network Tap,165,L,7
+14212,Usurp Cypher,195,H,8
+14213,Impersonate,151,L,15
+14214,Adroit Cypher Use,108,H,8
+14215,Using the Environment,195,H,15
+14216,Expert Cypher Use,137,M,8
+14217,Extra Use,138,L,8
+14218,Using What's Available,195,H,8
+14219,Use Senses of Others,195,M,11
+14220,Flamboyant Boast,140,M,12
+14221,Animal Shape Variant,"(GF, 29)(CTS, 49)",,
+14222,Lock,159,L,6
+14223,Lethal Vibration,158,H,13
+14224,Wilderness Life,199,L,15
+14225,Quick Wits,174,M,8
+14226,Vigilance,196,M,10
+14227,Vigilant,196,H,5
+14228,Remote Viewing,176,M,11
+14229,Deadly Aim,125,M,8
+14230,Careful Aim,118,L,15
+14231,Wild Vitality,198,H,8
+14232,Incredible Running Speed,153,H,9
+14233,Blurring Speed,115,H,"8,9"
+14234,Living Off the Land,158,L,5
+14235,There's Your Problem,190,L,15
+14236,See History,180,L,7
+14237,See the Unseen,180,L,11
+14238,See the Future,180,H,"10,15"
+14239,See Through Matter,180,L,11
+14240,See Through Time,181,H,11
+14241,Flight,141,H,9
+14242,Flight Exertion,141,L,
+14243,Electrical Flight,133,H,9
+14244,Steal Power,"(CTS, 56)",M,
+14245,Dream Thief,132,L,"7,13"
+14246,Will of a Leader,199,H,14
+14247,Will of Legend,199,L,5
+14248,Hunter's Drive,149,H,1
+14249,Got a Feeling,145,M,7
+14250,You Studied,0,M,15
+14251,Time Travel,192,H,9
+14252,Tree Travel,194,M,
+14253,Fast Travel,139,H,9
+14254,Fire Tendrils,140,H,13
+14255,Machine Vulnerabilities,159,M,8
+14256,True Guardian,194,M,14
+14257,True Necromancy,194,H,2
+14258,True Defender,194,H,14
+14259,True Senses,194,H,11
+14260,Eyes Adjusted,138,L,11
+14261,Beast Eyes,112,M,"2,11"
+14262,Calm Stranger,118,L,3
+14264,Incomparable Pilot,152,M,8
+14265,Zero Dark Eyes,200,L,15
+14266,Gamer's Fortitude,144,H,5
+14267,Push on Through,173,L,5
+14268,Quick Recovery,173,L,
+14269,Accelerate,108,M,
