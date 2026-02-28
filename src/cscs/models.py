@@ -421,7 +421,7 @@ class CSFlavorLang(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
     description: Mapped[str] = mapped_column(Text)
-    gm_intrusion: Mapped[str] = mapped_column(Text)
+    #gm_intrusion: Mapped[str] = mapped_column(Text)
     flavor_id = mapped_column(ForeignKey("csqt_flavor.id"))
     flavor: Mapped["CSFlavor"] = relationship(back_populates="locales")
     lang_id = mapped_column(ForeignKey("csqt_language.id"))

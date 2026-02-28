@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
-from models import CSFocusLang, CSCharacterTypeLang, CSAbilityLang,Language,CSDescriptorLang
+from models import CSFocusLang, CSCharacterTypeLang, CSAbilityLang,Language,CSDescriptorLang,CSFlavorLang
 
 class CSCGDB():
     def __init__(self, db_path):
@@ -30,5 +30,8 @@ class CSCGDB():
 
     def get_descriptors(self,lang_id):
         return self.session.scalars(select(CSDescriptorLang).join(Language).where(Language.id==lang_id).order_by('name'))
+
+    def get_flavors(self,lang_id):
+        return self.session.scalars(select(CSFlavorLang).join(Language).where(Language.id==lang_id).order_by('name'))
 
 

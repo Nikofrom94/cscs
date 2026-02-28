@@ -1,4 +1,4 @@
-from models import CSAbility,Language,CSAbilityLang,CSFocusLang,CSCharacterTypeLang,CSDescriptorLang
+from models import CSAbility,Language,CSAbilityLang,CSFocusLang,CSCharacterTypeLang,CSDescriptorLang,CSFlavorLang
 from PySide6.QtWidgets import QWidget,QGridLayout, QLineEdit, QFormLayout, QTextEdit,QLabel,QListWidget,QTreeWidgetItem,QTreeWidget,QTabWidget,QListView
 from PySide6.QtWidgets import QPushButton,QComboBox,QSpinBox
 from qt.modelviews import FocusAbilityListModel,FocusAbilitiesItem,FocusAbilityListItemDelegate
@@ -7,6 +7,7 @@ from qt.ability_ui import CSAbilityTabWidget
 from qt.focus_ui import CSFocusTabWidget
 from qt.charactertype_ui import CSCharacterTypeTabWidget
 from qt.descriptor_ui import CSDescriptorTabWidget
+from qt.flavor_ui import CSFlavorTabWidget
 
 class CSAbilityView:
     def __init__(self,ability:CSAbility, language:Language):
@@ -29,6 +30,8 @@ class CSBrowserWidgetItem(QTreeWidgetItem):
             self.targetClass = CSCharacterTypeTabWidget
         elif type(self._item) == CSDescriptorLang:
             self.targetClass = CSDescriptorTabWidget
+        elif type(self._item) == CSFlavorLang:
+            self.targetClass = CSFlavorTabWidget
 
 class CSBrowserWidget(QTreeWidget):
     AB_ROW_INDEX = 0
@@ -78,6 +81,12 @@ class CSBrowserWidget(QTreeWidget):
         for item in session.get_foci(2):
              node = CSBrowserWidgetItem(item)
              self.root_foci.addChild(node)
+        self.itemDoubleClicked.connect(self.show_item)
+        # fill with flavor list
+        self.root_descriptors = self.topLevelItem(CSBrowserWidget.FL_ROW_INDEX)
+        for item in session.get_flavors(2):
+             node = CSBrowserWidgetItem(item)
+             self.root_descriptors.addChild(node)
         self.itemDoubleClicked.connect(self.show_item)
 
     def show_item(self, item, column):
