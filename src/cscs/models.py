@@ -22,6 +22,7 @@ class Language(Base):
     flavor_langs: Mapped["CSFlavorLang"] = relationship(back_populates="language")
     charactertype_langs: Mapped["CSCharacterTypeLang"] = relationship(back_populates="language")
     cypher_langs: Mapped["CSCypherLang"] = relationship(back_populates="language")
+    descriptor_langs: Mapped["CSDescriptorLang"] = relationship(back_populates="language")
 
 # association table between tables abilities and focusabilities
 # https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html#many-to-many
@@ -244,6 +245,12 @@ class CSAbilityLang(Base):
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="ab_langs")
 
+    def get_shortdescription(self):
+        if len(self.description) > 150:
+            return self.description[0:150]
+        else:
+            return self.description
+
 class CSFocus(Base):
     """wrapper for a Focus"""
     __tablename__ = "csqt_focus"
@@ -311,7 +318,7 @@ class CSDescriptor(Base):
     cs_page: Mapped[str] = mapped_column(String(30))
     characteristics: Mapped[List["CSDescriptorCharacteristic"]] = relationship(
         secondary=descriptor_characteristics_table,
-        back_populates="descriptor"
+        back_populates="descriptors"
         )
     initiallinks: Mapped[List["CSInitialLink"]] = relationship(
         secondary=descriptor_initiallink_table,
@@ -321,16 +328,30 @@ class CSDescriptor(Base):
         secondary=character_descriptor_table,
         back_populates="descriptors"
         ) 
-    
+    locales: Mapped[List["CSDescriptorLang"]] = relationship(back_populates="descriptor")
+
+class CSDescriptorLang(Base):
+    __tablename__ = "csqt_descriptorlang"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(50))
+    description: Mapped[str] = mapped_column(Text)
+    descriptor_id = mapped_column(ForeignKey("csqt_descriptor.id"))
+    descriptor: Mapped["CSDescriptor"] = relationship(back_populates="locales")
+    lang_id = mapped_column(ForeignKey("csqt_language.id"))
+    language: Mapped["Language"] = relationship(back_populates="descriptor_langs")
+
 class CSDescriptorCharacteristic(Base):
     __tablename__ = "csqt_descriptorcharacteristic"
     id: Mapped[int] = mapped_column(primary_key=True)
-    descriptor_id = mapped_column(ForeignKey("csqt_descriptor.id"))
-    descriptor: Mapped["CSDescriptor"] = relationship(back_populates="characteristics")
-    locales: Mapped["CSDescriptorCharacteristicLang"] = relationship(back_populates="descriptorcharacteristic")
+    descriptors: Mapped[List["CSDescriptor"]] = relationship(
+        secondary=descriptor_characteristics_table,
+        back_populates="characteristics"
+        )
+    name: Mapped[str] = mapped_column(String(50))
+    locales: Mapped[List["CSDescriptorCharacteristicLang"]] = relationship(back_populates="descriptorcharacteristic")
 
 class CSDescriptorCharacteristicLang(Base):
-    __tablename__ = "csqt_descriptorcharaceristiclang"
+    __tablename__ = "csqt_descriptorcharacteristiclang"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
     description: Mapped[str] = mapped_column(Text)
@@ -342,7 +363,7 @@ class CSDescriptorCharacteristicLang(Base):
 class CSInitialLink(Base):
     __tablename__ = "csqt_initiallink"
     id: Mapped[int] = mapped_column(primary_key=True)
-    locales: Mapped["CSInitialLinkLang"] = relationship(back_populates="initiallink")
+    locales: Mapped[List["CSInitialLinkLang"]] = relationship(back_populates="initiallink")
     descriptors: Mapped[List["CSDescriptor"]] = relationship(
         secondary=descriptor_initiallink_table,
         back_populates="initiallinks"

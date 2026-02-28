@@ -1,14 +1,17 @@
-from PySide6.QtWidgets import QWidget,QStyledItemDelegate,QListWidgetItem,QLabel,QPushButton
-from PySide6.QtCore import QAbstractListModel,QModelIndex,Qt
+from PySide6.QtWidgets import QWidget,QAbstractItemDelegate,QListWidgetItem,QLabel,QPushButton,QStyleOptionProgressBar,QApplication,QStyle,QStyledItemDelegate,QApplication,QStyleOptionButton
+from PySide6.QtCore import QAbstractListModel,QModelIndex,Qt,QSize
 
-class FocusAbilitiesItem(QWidget):
+class FocusAbilitiesItem:
     def __init__(self,rank:int,ab_lang_list):
         self.rank = rank
         self.ab_lang_list=  ab_lang_list
         if len(self.ab_lang_list) == 1:
             self.prefix = self.tr(f"Rank {rank}: ")
         else:
-            self.prefix_to_choose = self.tr(f"Rank {rank}: Choose between ")
+            self.prefix = self.tr(f"Rank {rank}: Choose between ")
+
+    def tr(self,s):
+        return s
 
 class FocusAbilitiesWidgetItem(QListWidgetItem):
     def __init__(self,focusabilitiesitem:FocusAbilitiesItem,parent=None):
@@ -21,7 +24,6 @@ class FocusAbilitiesWidgetItem(QListWidgetItem):
         num_ab = 0
         for ab_lang in self._ab_lang_list:
             num_ab += 1
-            print(ab_lang.name)
             nameButton = QPushButton(ab_lang.name)
             nameButton.flat = True
             nameButton.setToolTip(ab_lang.description)
@@ -33,17 +35,74 @@ class FocusAbilitiesWidgetItem(QListWidgetItem):
         self.setLayout(self.textQVBoxLayout)
 
     def show_ab(self,ab_lang):
-        print(ab_lang.name)
+        print(f"ab_lang.name:{ab_lang.name}")
         print(f"parent type {type(self.parent)}")
 
-class FocusAbilityListItemDelegate(QStyledItemDelegate):
+class FocusAbilityListItemDelegate(QAbstractItemDelegate):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.lineWidth = 500
+        self.lineHeigth = 25
 
-    def createEditor(self, parentView,option,index:QModelIndex)-> QWidget:
-        abililities:FocusAbilitiesItem = parentView.data(index,Qt.DisplayRole)
-        return FocusAbilitiesWidgetItem(abililities)
+    def paint(self, painter, option,index):
+        if index.column() == 0:
+            if option.widget is not None:
+                style = option.widget.style()
+            else:
+                style = QApplication.style()
+            focusabilitiesitem = index.data(Qt.DisplayRole)
+            ab_lang_list = focusabilitiesitem.ab_lang_list
+                # self.textQVBoxLayout = QVBoxLayout()
+            prefix = focusabilitiesitem.prefix
+            style.drawItemText(
+                painter,
+                option.rect,
+                option.displayAlignment,
+                option.palette,
+                True,
+                prefix)
+            option.rect.moveRight(
+                option.rect.right()
+                + painter.fontMetrics().size(Qt.TextSingleLine,prefix).width()
+                )
+            num_ab = 0
+            buttons = []
+            for ab_lang in ab_lang_list:
+                num_ab += 1
+                nameButton = QPushButton(ab_lang.name)
+                nameButton.flat = True
+                nameButton.setToolTip(ab_lang.get_shortdescription())
+                optionButton = QStyleOptionButton()
+                optionButton.initFrom(nameButton)
+                buttons.append(nameButton)
+                style.drawControl(
+                    QStyle.ControlElement.CE_PushButton,
+                    optionButton,
+                    painter)
+                break
+                if num_ab < len(ab_lang_list):
+                    separator = self.tr(" or ")
+                    option.rect.moveRight(
+                        option.rect.right()
+                        + nameButton.width()
+                        )
+                    style.drawItemText(
+                        painter, option.rect,
+                        option.displayAlignment,
+                        option.palette,
+                        True,
+                        separator
+                        )
+                    option.rect.moveRight(
+                        option.rect.right()
+                        + painter.fontMetrics().size(Qt.TextSingleLine,separator).width()
+                        )
+            #painter.restore()
+        else:
+            QStyledItemDelegate.paint(painter, option, index)
 
+    def sizeHint(self, option ,index):
+        return QSize(self.lineWidth,self.lineHeigth)
 
 class FocusAbilityListModel(QAbstractListModel):
     def __init__(self, abilities, parent=None):
@@ -55,6 +114,9 @@ class FocusAbilityListModel(QAbstractListModel):
 
     # https://doc.qt.io/qtforpython-6/PySide6/QtCore/QAbstractItemModel.html#PySide6.QtCore.QAbstractItemModel.data
     def data(self, index:QModelIndex, role:int):
+        if role == Qt.DisplayRole:
+            ab = self._abilities[index.row()]
+
         if not index.isValid():
             return None
 

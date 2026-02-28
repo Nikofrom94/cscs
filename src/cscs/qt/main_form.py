@@ -16,9 +16,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QHeaderView, QMainWindow, QMenu,
-    QMenuBar, QSizePolicy, QSplitter, QStatusBar,
-    QTreeWidgetItem, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QLayout,
+    QMainWindow, QMenu, QMenuBar, QSizePolicy,
+    QSplitter, QStatusBar, QTreeWidgetItem, QWidget)
 
 from qt.cscs_ui import (CSBrowserWidget, CSTabWidget)
 
@@ -26,35 +26,50 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(643, 481)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.gridLayout_2 = QGridLayout(self.centralwidget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setSizeConstraint(QLayout.SizeConstraint.SetMinAndMaxSize)
         self.splitter = QSplitter(self.centralwidget)
         self.splitter.setObjectName(u"splitter")
-        self.splitter.setGeometry(QRect(0, 0, 801, 551))
+        sizePolicy.setHeightForWidth(self.splitter.sizePolicy().hasHeightForWidth())
+        self.splitter.setSizePolicy(sizePolicy)
         self.splitter.setOrientation(Qt.Orientation.Horizontal)
-        self.csItemDirectory = CSBrowserWidget(self.splitter)
+        self.mainTree = CSBrowserWidget(self.splitter)
         __qtreewidgetitem = QTreeWidgetItem()
         __qtreewidgetitem.setText(0, u"1");
-        self.csItemDirectory.setHeaderItem(__qtreewidgetitem)
-        self.csItemDirectory.setObjectName(u"csItemDirectory")
-        self.csItemDirectory.setMaximumSize(QSize(300, 16777215))
-        self.csItemDirectory.setBaseSize(QSize(50, 0))
-        self.splitter.addWidget(self.csItemDirectory)
-        self.csItemDirectory.header().setVisible(False)
-        self.csItemTab = CSTabWidget(self.splitter)
-        self.csItemTab.setObjectName(u"csItemTab")
-        self.tab = QWidget()
-        self.tab.setObjectName(u"tab")
-        self.csItemTab.addTab(self.tab, "")
-        self.tab_2 = QWidget()
-        self.tab_2.setObjectName(u"tab_2")
-        self.csItemTab.addTab(self.tab_2, "")
-        self.splitter.addWidget(self.csItemTab)
+        self.mainTree.setHeaderItem(__qtreewidgetitem)
+        self.mainTree.setObjectName(u"mainTree")
+        sizePolicy.setHeightForWidth(self.mainTree.sizePolicy().hasHeightForWidth())
+        self.mainTree.setSizePolicy(sizePolicy)
+        self.mainTree.setMaximumSize(QSize(300, 16777215))
+        self.mainTree.setBaseSize(QSize(50, 0))
+        self.splitter.addWidget(self.mainTree)
+        self.mainTree.header().setVisible(False)
+        self.mainTab = CSTabWidget(self.splitter)
+        self.mainTab.setObjectName(u"mainTab")
+        sizePolicy.setHeightForWidth(self.mainTab.sizePolicy().hasHeightForWidth())
+        self.mainTab.setSizePolicy(sizePolicy)
+        self.splitter.addWidget(self.mainTab)
+
+        self.gridLayout.addWidget(self.splitter, 0, 0, 1, 1)
+
+
+        self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 1)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 643, 22))
         self.menuCypher_System_Character_Sheet = QMenu(self.menubar)
         self.menuCypher_System_Character_Sheet.setObjectName(u"menuCypher_System_Character_Sheet")
         MainWindow.setMenuBar(self.menubar)
@@ -71,8 +86,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.csItemTab.setTabText(self.csItemTab.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
-        self.csItemTab.setTabText(self.csItemTab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tab 2", None))
         self.menuCypher_System_Character_Sheet.setTitle(QCoreApplication.translate("MainWindow", u"File", None))
     # retranslateUi
 

@@ -18,7 +18,7 @@ class MainWindow(QMainWindow):
         session = CSCGDB(CSQT_DBPATH)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.csItemDirectory.fill_browser(target_tab=self.ui.csItemTab,session=session)
+        self.ui.mainTree.fill_browser(target_tab=self.ui.mainTab,session=session)
 
 
 if __name__ == "__main__":
