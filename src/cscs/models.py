@@ -170,6 +170,7 @@ class CSAbility(Base):
     __tablename__ = "csqt_ability"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
+    enabled: Mapped[bool] = mapped_column(Boolean)
     cs_page: Mapped[str] = mapped_column(String(30))
     tier: Mapped[str] = mapped_column(String(1))
     locales: Mapped[List["CSAbilityLang"]] = relationship(back_populates="ability")
@@ -257,6 +258,7 @@ class CSFocus(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
     cs_page: Mapped[str] = mapped_column(String(30))
+    enabled: Mapped[bool] = mapped_column(Boolean)
     locales: Mapped[List["CSFocusLang"]] = relationship(back_populates="focus")
     abilities_tier1_id = mapped_column(ForeignKey("csqt_focusabilities.id"))
     abilities_tier1: Mapped["CSFocusAbilities"] = relationship(foreign_keys="CSFocus.abilities_tier1_id")
@@ -315,6 +317,7 @@ class CSDescriptor(Base):
     __tablename__ = "csqt_descriptor"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
+    enabled: Mapped[bool] = mapped_column(Boolean)
     cs_page: Mapped[str] = mapped_column(String(30))
     characteristics: Mapped[List["CSDescriptorCharacteristic"]] = relationship(
         secondary=descriptor_characteristics_table,
@@ -383,6 +386,7 @@ class CSFlavor(Base):
     __tablename__ = "csqt_flavor"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
+    enabled: Mapped[bool] = mapped_column(Boolean)
     cs_page: Mapped[str] = mapped_column(String(30))
     abilities_rank1: Mapped[List[CSAbility]] = relationship(
         secondary=flavor_abilities_tier1_table,
@@ -432,6 +436,7 @@ class CSCharacterType(Base):
     __tablename__ = "csqt_charactertype"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
+    enabled: Mapped[bool] = mapped_column(Boolean)
     might_start: Mapped[int] = mapped_column(Integer)
     speed_start: Mapped[int] = mapped_column(Integer)
     intellect_start: Mapped[int] = mapped_column(Integer)

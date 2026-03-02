@@ -8,21 +8,20 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 #     pyside6-uic form.ui -o ui_form.py, or
 #     pyside2-uic form.ui -o ui_form.py
 from qt.main_form import Ui_MainWindow
-from cscs_db import CSCGDB
+from cscs_db import Session,CSCGDB
 
-CSQT_DBPATH = './db.sqlite3'
+import settings
 
 class MainWindow(QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, session,parent=None):
         super().__init__(parent)
-        session = CSCGDB(CSQT_DBPATH)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.mainTree.fill_browser(target_tab=self.ui.mainTab,session=session)
 
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    widget = MainWindow()
+    session = Session()
+    widget = MainWindow(session)
     widget.show()
     sys.exit(app.exec())

@@ -46,3 +46,4 @@ class CSFlavorTabWidget(QWidget):
                 if locale.lang_id == self.lang_id:
                     ab_lang_list.append(FlavorAbility(ab_lang=locale,rank=rank))
         return ab_lang_list
+
