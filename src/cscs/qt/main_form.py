@@ -20,7 +20,7 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QHeaderView, QLayout,
     QMainWindow, QMenu, QMenuBar, QSizePolicy,
     QSplitter, QStatusBar, QTreeWidgetItem, QWidget)
 
-from qt.cscs_ui import (CSBrowserWidget, CSTabWidget)
+from qt.cscs_ui import (CSDirectoryWidget, CSTabWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.splitter.sizePolicy().hasHeightForWidth())
         self.splitter.setSizePolicy(sizePolicy)
         self.splitter.setOrientation(Qt.Orientation.Horizontal)
-        self.mainTree = CSBrowserWidget(self.splitter)
+        self.mainTree = CSDirectoryWidget(self.splitter)
         __qtreewidgetitem = QTreeWidgetItem()
         __qtreewidgetitem.setText(0, u"1");
         self.mainTree.setHeaderItem(__qtreewidgetitem)

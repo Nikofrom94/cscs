@@ -1,0 +1,5 @@
+module CSCS
+typeinfo csdirectory_model.qmltypes
+typeinfo cscs_db.qmltypes
+Main 1.0 Main.qml
+CSDirectoryTreeDelegate 1.0 CSDirectoryTreeDelegate.qml

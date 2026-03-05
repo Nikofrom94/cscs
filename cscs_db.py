@@ -1,17 +1,31 @@
-import sqlite3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import select,delete
-
+from sqlalchemy import select
+from PySide6.QtQml import QmlElement
+from PySide6.QtCore import QObject
 from models import CSFocusLang, CSCharacterTypeLang, CSAbilityLang,Language,CSDescriptorLang,CSFlavorLang
 from models import CSFocus, CSCharacterType, CSAbility,CSDescriptor,CSFlavor
 
 
 import settings
+
 db_path=settings.DATABASE['URL']
 engine = create_engine(db_path)
 
 Session = sessionmaker(engine)
+
+QML_IMPORT_NAME = "CSCS"
+QML_IMPORT_MAJOR_VERSION = 1
+
+@QmlElement
+class Database(QObject):
+    session:Session
+    def __init__(self):
+        print("creationg new session")
+        self.session = Session()
+
+    def __del__(self):
+        self.session.close()
 
 class CSCGDB():
     @staticmethod

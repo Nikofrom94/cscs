@@ -3,5 +3,20 @@ name = "Cypher System Character Sheet"
 
 [tool.pyside6-project]
 files = [
+	"CSCS/Main.qml",
+	"CSCS/csdirectory_model.py",
+	"CSCS/qmldir",
+	"cscs_db.py",
+	"main.py",
+	"qml.qrc",
 	"src/cscs/qt/Cypher_System_Character_Sheet_fr_FR.ts",
+	"src/cscs/qt/ability_widgets.py",
+	"src/cscs/qt/dialog_selectrankedability.ui",
+	"src/cscs/qt/flavor_tab.ui",
+	"src/cscs/qt/rankedability_delegate.py",
+	"src/cscs/qt/rankedability_dialog.py",
 	]
+qmlImportPaths = [
+ "/home/niko/Github/cscs/.qtcreator/Python_3_12_3venv/lib/python3.12/site-packages/PySide6/Qt/qml",
+ "/home/niko/Github/cscs",
+    ]

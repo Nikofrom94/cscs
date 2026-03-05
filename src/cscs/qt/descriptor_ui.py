@@ -3,8 +3,9 @@ from models import CSDescriptorLang
 from qt.common_ui import TierComboBox
 
 class CSDescriptorTabWidget(QWidget):
-    def __init__(self, descriptorlang:CSDescriptorLang,parent=None):
+    def __init__(self, descriptorlang:CSDescriptorLang, session,parent=None):
         super().__init__(parent)
+        self.session = session
         self._descriptorlang:CSDescriptorLang = descriptorlang
         self.lang_id = self._descriptorlang.lang_id
         self._descriptor = self._descriptorlang.descriptor

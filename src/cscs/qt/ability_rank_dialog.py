@@ -4,14 +4,13 @@ from PySide6.QtWidgets import (QDialog, QLabel, QTextEdit, QLineEdit,
                                QVBoxLayout,QListWidget,QListWidgetItem,
                                QPushButton)
 
-
 import settings
 from cscs_db import CSCGDB
 from models import CSAbilityLang
 from qt.common_ui import AbilityLangRank
 
 class CSAbilityListWidgetItem(QListWidgetItem):
-    def__init__(self,ab_lang:CSAbilityLang,parent=None):
+    def __init__(self,ab_lang:CSAbilityLang,parent=None):
         super().__init__(parent)
         self._ab_lang = ab_lang
         self.setText(self._ab_lang.name)
@@ -43,4 +42,5 @@ class CSAbilityRankDialog(Qdialog):
 
         self.setLayout(gridLayout)
 
-    def filter_abilities(self, text):n
+    def filter_abilities(self, text):
+            pass

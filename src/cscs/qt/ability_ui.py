@@ -3,10 +3,10 @@ from models import CSAbilityLang
 from qt.common_ui import TierComboBox
 
 
-
 class CSAbilityTabWidget(QWidget):
-    def __init__(self, abilitylang:CSAbilityLang,parent=None):
+    def __init__(self, abilitylang:CSAbilityLang, session,parent=None):
         super().__init__(parent)
+        self.session = session
         self._abilitylang:CSAbilityLang = abilitylang
         self.lang_id = self._abilitylang.lang_id
         self._ability = self._abilitylang.ability
@@ -15,12 +15,14 @@ class CSAbilityTabWidget(QWidget):
         self.nameEdit = QLineEdit(self._abilitylang.name)
         self.statEdit = QLineEdit(self._abilitylang.stat)
         self.cs_pageEdit = QLineEdit(self._ability.cs_page)
+        self.tierEdit = QLineEdit(self._ability.tier)
         self.descriptionEdit = QTextEdit(self._abilitylang.description)
 
         form = QFormLayout()
         form.addRow(self.tr("Name"), self.nameEdit)
-        form.addRow(self.tr("stat"), self.statEdit)
-        form.addRow(self.tr("cs_page"), self.cs_pageEdit)
+        form.addRow(self.tr("Stat"), self.statEdit)
+        form.addRow(self.tr("CS Page"), self.cs_pageEdit)
+        form.addRow(self.tr("Tier"), self.tierEdit)
         gridlayout.addLayout(form,0,0)
         gridlayout.addWidget(QLabel(self.tr("Description")),1,0)
         gridlayout.addWidget(self.descriptionEdit,2,0)

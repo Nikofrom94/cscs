@@ -1,0 +1,37 @@
+[
+    {
+        "classes": [
+            {
+                "className": "CSDirectoryItem",
+                "qualifiedClassName": "CSDirectoryItem",
+                "object": false
+            },
+            {
+                "className": "CSDirectoryModel",
+                "qualifiedClassName": "CSDirectoryModel",
+                "object": true,
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ],
+                "classInfos": [
+                    {
+                        "name": "QML.Element",
+                        "value": "auto"
+                    }
+                ]
+            }
+        ],
+        "outputRevision": 68,
+        "QML_IMPORT_NAME": "CSCS",
+        "QML_IMPORT_MAJOR_VERSION": 1,
+        "QML_IMPORT_MINOR_VERSION": 0,
+        "QT_MODULES": [
+            "QtCore",
+            "QtQml"
+        ],
+        "inputFile": "/home/niko/Github/cscs/CSCS/csdirectory_model.py"
+    }
+]

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>CSCS/Main.qml</file>
+        <file>tst_mainwindow.qml</file>
+        <file>CSCS/CSDirectoryTreeDelegate.qml</file>
+    </qresource>
+</RCC>

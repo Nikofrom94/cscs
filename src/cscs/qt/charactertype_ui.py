@@ -14,8 +14,9 @@ class CharacterTypeAbility:
         self.ab_lang = ab_lang
 
 class CSCharacterTypeTabWidget(QWidget):
-    def __init__(self, typelang:CSCharacterTypeLang):
-        super().__init__()
+    def __init__(self, typelang:CSCharacterTypeLang, session,parent=None):
+        super().__init__(parent)
+        self.session = session
         self._typelang:CSCharacterTypeLang = typelang
         self.lang_id = self._typelang.lang_id
         self._type = self._typelang.charactertype

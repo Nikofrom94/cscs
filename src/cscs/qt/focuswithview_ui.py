@@ -2,20 +2,13 @@ from models import CSAbility,Language,CSAbilityLang,CSFocusLang
 from PySide6.QtWidgets import QWidget,QGridLayout, QLineEdit, QFormLayout, QTextEdit,QLabel,QListWidget,QTreeWidgetItem,QTreeWidget,QTabWidget,QListView
 from PySide6.QtWidgets import QPushButton,QComboBox,QSpinBox
 
-
-from qt.rankedability_model import RankedAbilityToChooseModel,RankedAbilityToChoose
-from qt.rankedability_delegate import RankedAbilityToChooseDelegate
-
-from qt.dialog_selectuniquerankedability import Ui_SelectUniqueRankedAbilityDialog
-
 class FocusAbilityListWidget(QListWidget):
-    def __init__(self,focus_lang:CSFocusLang, session, parent=None):
+    def __init__(self,focus_lang:CSFocusLang, session,parent=None):
         super(FocusAbilityListWidget,self).__init__(parent)
         self.session = session
         self._focus_lang:CSAbilityLang = focus_lang
         self.lang_id = self._focus_lang.lang_id
         self._focus = self._focus_lang.focus
-        self._rankedabilities = []
         for rank in range(1,7):
             if rank==1: focusability = self._focus.abilities_tier1
             elif rank==2: focusability = self._focus.abilities_tier2
@@ -54,9 +47,8 @@ class FocusAbilityListWidget(QListWidget):
 
 
 class CSFocusTabWidget(QWidget):
-    def __init__(self, focuslang:CSFocusLang,session,parent=None):
-        super().__init__(parent)
-        self.session = session
+    def __init__(self, focuslang:CSFocusLang):
+        super().__init__()
         self._focuslang:CSAbilityLang = focuslang
         self.lang_id = self._focuslang.lang_id
         self._focus = self._focuslang.focus
@@ -71,17 +63,19 @@ class CSFocusTabWidget(QWidget):
         gridlayout.addLayout(form,0,0)
         gridlayout.addWidget(QLabel(self.tr("Description")),1,0)
         gridlayout.addWidget(self.description,2,0)
-
-
         gridlayout.addWidget(QLabel(self.tr("Abilities")),3,0)
-        listWidget = FocusAbilityListWidget(self._focuslang, self.session)
+        listWidget = FocusAbilityListWidget(self._focuslang)
         gridlayout.addWidget(listWidget,4,0)
+        # listWidget = QListWidget()
+        # current_grid_row = 3
+        # for rank in range(1,7):
+        #     current_grid_row = self.display_abilities(rank,listWidget,current_grid_row)
+        # gridlayout.addWidget(listWidget,3,0)
         self.setLayout(gridlayout)
 
 class CSFocusTabWidget2(QWidget):
-    def __init__(self, focuslang:CSFocusLang,session, parent=None):
-        super().__init__(parent)
-        self.session = session
+    def __init__(self, focuslang:CSFocusLang):
+        super().__init__()
         self._focuslang:CSAbilityLang = focuslang
         self.lang_id = self._focuslang.lang_id
         self._focus = self._focuslang.focus
@@ -97,10 +91,10 @@ class CSFocusTabWidget2(QWidget):
         gridlayout.addWidget(QLabel(self.tr("Description")),1,0)
         gridlayout.addWidget(self.description,2,0)
         gridlayout.addWidget(QLabel(self.tr("Abilities")),3,0)
-        focusabilitiesModel = RankedAbilityToChooseModel(session=self.session,rankedabilitytochoose=self.get_rankedabilitytochoose())
+        focusabilitiesModel = FocusAbilityListModel(abilities=self.get_focusabilities())
         listView = QListView()
         listView.setModel(focusabilitiesModel)
-        listView.setItemDelegate(RankedAbilityToChooseDelegate())
+        listView.setItemDelegate(FocusAbilityListItemDelegate())
         gridlayout.addWidget(listView,4,0)
         # listWidget = QListWidget()
         # current_grid_row = 3
@@ -137,34 +131,4 @@ class CSFocusTabWidget2(QWidget):
                         if ab_lang is not None:
                             abilities_to_choose.append(ab_lang)
                     focus_abilities.append(FocusAbilitiesItem(rank,abilities_to_choose))
-        return focus_abilities
-
-
-    def get_rankedabilitytochoose(self):
-        focus_abilities = []
-        for rank in range(1,7):
-            if rank==1: focusability = self._focus.abilities_tier1
-            elif rank==2: focusability = self._focus.abilities_tier2
-            elif rank==3: focusability = self._focus.abilities_tier3
-            elif rank==4: focusability = self._focus.abilities_tier4
-            elif rank==5: focusability = self._focus.abilities_tier5
-            elif rank==6: focusability = self._focus.abilities_tier6
-            if focusability is not None:
-                for ab in focusability.abilities:
-                    ab_lang = None
-                    for locale in ab.locales:
-                        if locale.lang_id == self.lang_id:
-                            ab_lang = locale
-                    if ab_lang is not None:
-                        focus_abilities.append(RankedAbilityToChoose(rank=rank,ab_lang_list=[ab_lang]))
-                if len(focusability.abilities_to_choose) > 0:
-                    abilities_to_choose = []
-                    for ab in focusability.abilities_to_choose:
-                        ab_lang = None
-                        for locale in ab.locales:
-                            if locale.lang_id == self.lang_id:
-                                ab_lang = locale
-                        if ab_lang is not None:
-                            abilities_to_choose.append(ab_lang)
-                    focus_abilities.append(RankedAbilityToChoose(rank=rank,ab_lang_list=abilities_to_choose))
         return focus_abilities

@@ -37,7 +37,7 @@
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
-        <widget class="CSBrowserWidget" name="mainTree">
+        <widget class="CSDirectoryWidget" name="mainTree">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -105,7 +105,7 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>CSBrowserWidget</class>
+   <class>CSDirectoryWidget</class>
    <extends>QTreeWidget</extends>
    <header>qt.cscs_ui</header>
   </customwidget>
