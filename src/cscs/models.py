@@ -8,6 +8,7 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column
 from sqlalchemy import Table
+from sqlalchemy import select
 
 class Base(DeclarativeBase):
     pass
@@ -234,7 +235,23 @@ class CSAbility(Base):
         secondary=character_ability_table,
         back_populates="abilities"
         )
-    
+
+    def __init__(self, name:str, cs_page:str=''):
+        self.name = name
+        self.cs_page = cs_page
+        self.abilities_tier1 = CSFocusAbilities()
+        self.abilities_tier2 = CSFocusAbilities()
+        self.abilities_tier3 = CSFocusAbilities()
+        self.abilities_tier4 = CSFocusAbilities()
+        self.abilities_tier5 = CSFocusAbilities()
+        self.abilities_tier6 = CSFocusAbilities()
+
+    def save(self,session):
+        if self.locales is None or len(self.locales) == 0:
+            for language in session.scalars(select(Language)):
+                self.locales.add(CSAbilityLang(self.name))
+        session.commit()
+
 class CSAbilityLang(Base):
     __tablename__ = "csqt_abilitylang"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -245,6 +262,12 @@ class CSAbilityLang(Base):
     ability: Mapped["CSAbility"] = relationship(back_populates="locales")
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="ab_langs")
+
+    def __init__(self, name:str, description:str='',stat:str=''):
+        self.name = name
+        self.description = description
+        self.cs_page = cs_page
+        self.stat = stat
 
     def get_shortdescription(self):
         if len(self.description) > 150:
@@ -274,6 +297,86 @@ class CSFocus(Base):
     abilities_tier6: Mapped["CSFocusAbilities"] = relationship(foreign_keys="CSFocus.abilities_tier6_id")
     charactertemplates: Mapped["CSCharacterTemplate"] = relationship(back_populates="focus")
 
+    def __init__(self, name:str, cs_page:str=''):
+        self.name = name
+        self.cs_page = cs_page
+        self.abilities_tier1 = CSFocusAbilities()
+        self.abilities_tier2 = CSFocusAbilities()
+        self.abilities_tier3 = CSFocusAbilities()
+        self.abilities_tier4 = CSFocusAbilities()
+        self.abilities_tier5 = CSFocusAbilities()
+        self.abilities_tier6 = CSFocusAbilities()
+
+    def save(self,session):
+        if self.locales is None or len(self.locales) == 0:
+            for language in session.scalars(select(Language)):
+                self.locales.add(CSFocusLang(self.name))
+        session.commit()
+
+    def add_ability(self, ab:CSAbility, tier:int):
+        if tier == 1:
+            self.abilities_tier1.abilities.add(ab)
+        if tier == 2:
+            self.abilities_tier2.abilities.add(ab)
+        if tier == 3:
+            self.abilities_tier3.abilities.add(ab)
+        if tier == 4:
+            self.abilities_tier4.abilities.add(ab)
+        if tier == 5:
+            self.abilities_tier5.abilities.add(ab)
+        if tier == 6:
+            self.abilities_tier6.abilities.add(ab)
+
+    def remove_ability(self, ab:CSAbility, tier:int):
+        if tier == 1:
+            self.abilities_tier1.abilities.remove(ab)
+        if tier == 2:
+            self.abilities_tier2.abilities.remove(ab)
+        if tier == 3:
+            self.abilities_tier3.abilities.remove(ab)
+        if tier == 4:
+            self.abilities_tier4.abilities.remove(ab)
+        if tier == 5:
+            self.abilities_tier5.abilities.remove(ab)
+        if tier == 6:
+            self.abilities_tier6.abilities.remove(ab)
+
+    def add_abilitiestochoose(self, ab_list:list[CSAbility], tier:int):
+        if tier == 1:
+            self.abilities_tier1.abilities_to_choose.add_all(ab_list)
+        if tier == 2:
+            self.abilities_tier2.abilities_to_choose.add_all(ab_list)
+        if tier == 3:
+            self.abilities_tier3.abilities_to_choose.add_all(ab_list)
+        if tier == 4:
+            self.abilities_tier4.abilities_to_choose.add_all(ab_list)
+        if tier == 5:
+            self.abilities_tier5.abilities_to_choose.add_all(ab_list)
+        if tier == 6:
+            self.abilities_tier6.abilities_to_choose.add_all(ab_list)
+
+    def remove_abilitiestochoose(self, ab_list:list[CSAbility], tier:int):
+        if tier == 1:
+            for ab in ab_list:
+                self.abilities_tier1.abilities_to_choose.remove(ab)
+        if tier == 2:
+            for ab in ab_list:
+                self.abilities_tier2.abilities_to_choose.remove(ab)
+        if tier == 3:
+            for ab in ab_list:
+                self.abilities_tier3.abilities_to_choose.remove(ab)
+        if tier == 4:
+            for ab in ab_list:
+                self.abilities_tier4.abilities_to_choose.remove(ab)
+        if tier == 5:
+            for ab in ab_list:
+                self.abilities_tier5.abilities_to_choose.remove(ab)
+        if tier == 6:
+            for ab in ab_list:
+                self.abilities_tier6.abilities_to_choose.remove(ab)
+
+
+
 class CSFocusLang(Base):
     __tablename__ = "csqt_focuslang"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -284,6 +387,10 @@ class CSFocusLang(Base):
     focus: Mapped["CSFocus"] = relationship(back_populates="locales")
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="focus_langs")
+
+    def __init__(self, name:str, description:str=''):
+        self.name = name
+        self.description = description
 
 class CSFocusAbilities(Base):
     __tablename__= "csqt_focusabilities"
@@ -333,6 +440,16 @@ class CSDescriptor(Base):
         ) 
     locales: Mapped[List["CSDescriptorLang"]] = relationship(back_populates="descriptor")
 
+    def __init__(self, name:str,cs_page:str=''):
+        self.name = name
+        self.cs_page = cs_page
+
+    def save(self,session):
+        if self.locales is None or len(self.locales) == 0:
+            for language in session.scalars(select(Language)):
+                self.locales.add(CSDescriptorLang(self.name))
+        session.commit()
+
 class CSDescriptorLang(Base):
     __tablename__ = "csqt_descriptorlang"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -342,6 +459,10 @@ class CSDescriptorLang(Base):
     descriptor: Mapped["CSDescriptor"] = relationship(back_populates="locales")
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="descriptor_langs")
+
+    def __init__(self, name:str,description:str=''):
+        self.name = name
+        self.description = description
 
 class CSDescriptorCharacteristic(Base):
     __tablename__ = "csqt_descriptorcharacteristic"
@@ -419,6 +540,45 @@ class CSFlavor(Base):
         ) 
     charactertemplates: Mapped["CSCharacterTemplate"] = relationship(back_populates="flavor")
 
+    def __init__(self, name:str, cs_page:str='', description:str='') -> None:
+        self.name = name
+        self.enabled = True
+
+    def save(self, session):
+        session.commit()
+
+    def add_ability(self, session, ab:CSAbility, rank:int):
+        if rank==1:
+            self.abilities_rank1.append(ab)
+        elif rank==2:
+            self.abilities_rank2.append(ab)
+        elif rank==3:
+            self.abilities_rank3.append(ab)
+        elif rank==4:
+            self.abilities_rank4.append(ab)
+        elif rank==5:
+            self.abilities_rank5.append(ab)
+        elif rank==6:
+            self.abilities_rank6.append(ab)
+        session.commit()
+
+    def remove_ability(self, session, ab:CSAbility, rank:int):
+        if rank==1:
+            self.abilities_rank1.remove(ab)
+        elif rank==2:
+            self.abilities_rank2.remove(ab)
+        elif rank==3:
+            self.abilities_rank3.remove(ab)
+        elif rank==4:
+            self.abilities_rank4.remove(ab)
+        elif rank==5:
+            self.abilities_rank5.remove(ab)
+        elif rank==6:
+            self.abilities_rank6.remove(ab)
+        session.commit()
+
+
+
     
 class CSFlavorLang(Base):
     __tablename__ = "csqt_flavorlang"
@@ -430,6 +590,10 @@ class CSFlavorLang(Base):
     flavor: Mapped["CSFlavor"] = relationship(back_populates="locales")
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="flavor_langs")
+
+    def __init__(self, name:str, cs_page:str='', description:str='') -> None:
+        self.name = name
+        self.description = description
 
 class CSCharacterType(Base):
     """wrapper for a Character Type"""

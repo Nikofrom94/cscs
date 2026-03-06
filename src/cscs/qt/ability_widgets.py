@@ -18,12 +18,13 @@ class AbilityListWidgetItem(QtWidgets.QListWidgetItem):
     def description(self) -> str:
         return self.item.description
 
-
     @property
     def ab_lang(self) -> CSAbilityLang:
         return self.item
 
-
+    @property
+    def ability(self):
+        return self.item.ability
 
 class AbilityListWidget(QtWidgets.QListWidget):
     def __init__(self, parent=None):

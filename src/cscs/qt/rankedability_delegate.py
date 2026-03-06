@@ -11,6 +11,14 @@ class RankedUniqueAbilityItem(QListWidgetItem):
         super().__init__(label)
         self.setToolTip(self.ranked_ab.get_shortdescription())
 
+    @property
+    def rank(self):
+        return self.ranked_ab.rank
+
+    @property
+    def ability(self):
+        return self.ranked_ab.ability
+
 class RankedUniqueAbilityListWidget(QListWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -22,7 +30,7 @@ class RankedUniqueAbilityListWidget(QListWidget):
         for ab in ranked_ab_list:
             rank = ab.rank
             name = ab.name
-            self.addItem(RankedUniqueAbilityItem(ab), label=self.tr("Rank: {rank} : {name}"))
+            self.addItem(RankedUniqueAbilityItem(ab,label=self.tr(f"Rank: {rank} : {name}")))
 
 
 

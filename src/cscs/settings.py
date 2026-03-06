@@ -4,4 +4,4 @@ DATABASE={
 
 LANG = "fr-fr"
 
-LANG_ID = 2
+LANG_ID = 1

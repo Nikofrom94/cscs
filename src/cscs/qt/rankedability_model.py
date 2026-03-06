@@ -10,6 +10,10 @@ class RankedAbility:
         self.rank = rank
 
     @property
+    def ability(self):
+        return self._ab_lang.ability
+
+    @property
     def name(self) -> str:
         return self._ab_lang.name
 
