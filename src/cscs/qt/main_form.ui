@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Cypher System Character Sheet</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../resources/cropped-Cypher-System-Bug-192x192.png</normaloff>../resources/cropped-Cypher-System-Bug-192x192.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">

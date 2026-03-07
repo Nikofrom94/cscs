@@ -12,11 +12,14 @@ from cscs_db import Session,CSCGDB
 
 import settings
 
+APP_NAME = "Cypher System Character Sheet"
+
 class MainWindow(QMainWindow):
     def __init__(self, session,parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setObjectName(APP_NAME)
         self.ui.mainTree.fill_browser(target_tab=self.ui.mainTab,session=session)
 
 if __name__ == "__main__":

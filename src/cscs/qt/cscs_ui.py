@@ -1,4 +1,4 @@
-from models import CSAbility,Language,CSAbilityLang,CSFocusLang,CSCharacterTypeLang,CSDescriptorLang,CSFlavorLang
+from models import CSAbility,Language,CSAbilityLang,CSFocusLang,CSCharacterTypeLang,CSDescriptorLang,CSFlavorLang,CSCharacterTemplate,CSCharacterTemplateLang
 from PySide6.QtWidgets import QWidget,QGridLayout, QLineEdit, QFormLayout, QTextEdit,QLabel,QListWidget,QTreeWidgetItem,QTreeWidget,QTabWidget,QListView,QMenu
 from PySide6.QtWidgets import QPushButton,QComboBox,QSpinBox
 from qt.modelviews import FocusAbilityListModel,FocusAbilitiesItem,FocusAbilityListItemDelegate
@@ -9,6 +9,7 @@ from qt.focus_ui import CSFocusTabWidget
 from qt.charactertype_ui import CSCharacterTypeTabWidget
 from qt.descriptor_ui import CSDescriptorTabWidget
 from qt.flavor_ui import CSFlavorTabWidget
+from qt.charactertemplate_ui import CSCharacterTemplateTabWidget
 
 import settings
 from cscs_db import CSCGDB,Session
@@ -36,6 +37,8 @@ class CSDirectoryWidgetItem(QTreeWidgetItem):
             self.targetClass = CSDescriptorTabWidget
         elif type(self._item) == CSFlavorLang:
             self.targetClass = CSFlavorTabWidget
+        elif type(self.item) == CSCharacterTemplate:
+            self.targetClass = CSCharacterTemplateTabWidget
 
     def disable(self) -> None:
         """disable the item in db"""
@@ -47,25 +50,35 @@ class CSDirectoryWidget(QTreeWidget):
     FO_ROW_INDEX = 2
     DE_ROW_INDEX = 3
     FL_ROW_INDEX = 4
+    TE_ROW_INDEX = 5
     session:Session
     def __init__(self,parent=None):
         super(CSDirectoryWidget,self).__init__(parent)
         self.setColumnCount(1)
+        self.item_abilities = QTreeWidgetItem(None,[self.tr("Abilities")])
         self.insertTopLevelItems(
             CSDirectoryWidget.AB_ROW_INDEX,
-            [QTreeWidgetItem(None,[self.tr("Abilities")])])
+            [self.item_abilities])
+        self.item_types = QTreeWidgetItem(None,[self.tr("Types")])
         self.insertTopLevelItems(
             CSDirectoryWidget.TY_ROW_INDEX,
-            [QTreeWidgetItem(None,[self.tr("Types")])])
+            [self.item_types])
+        self.item_foci = QTreeWidgetItem(None,[self.tr("Foci")])
         self.insertTopLevelItems(
             CSDirectoryWidget.FO_ROW_INDEX,
-            [QTreeWidgetItem(None,[self.tr("Foci")])])
+            [self.item_foci])
+        self.item_descriptors = QTreeWidgetItem(None,[self.tr("Descriptors")])
         self.insertTopLevelItems(
             CSDirectoryWidget.DE_ROW_INDEX,
-            [QTreeWidgetItem(None,[self.tr("Descriptor")])])
+            [self.item_descriptors])
+        self.item_flavors = QTreeWidgetItem(None,[self.tr("Flavors")])
         self.insertTopLevelItems(
             CSDirectoryWidget.FL_ROW_INDEX,
-            [QTreeWidgetItem(None,[self.tr("Flavor")])])
+            [self.item_flavors])
+        self.item_templates = QTreeWidgetItem(None,[self.tr("Templates")])
+        self.insertTopLevelItems(
+            CSDirectoryWidget.TE_ROW_INDEX,
+            [self.item_templates])
         # manage context ModuleNotFoundError
         self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.customContextMenuRequested.connect(self.display_context_menu)
@@ -100,6 +113,12 @@ class CSDirectoryWidget(QTreeWidget):
         for item in CSCGDB.get_flavors(session):
              node = CSDirectoryWidgetItem(item)
              self.root_descriptors.addChild(node)
+         # fill with character type list
+        self.root_charactertemplates = self.topLevelItem(CSDirectoryWidget.TE_ROW_INDEX)
+        for item in CSCGDB.get_charactertemplates(session):
+             node = CSDirectoryWidgetItem(item)
+             self.root_charactertemplates.addChild(node)
+
         self.itemDoubleClicked.connect(self.show_item)
 
     def show_item(self, item, column):
@@ -112,19 +131,28 @@ class CSDirectoryWidget(QTreeWidget):
 
     @Slot(QPoint)
     def display_context_menu(self, pos):
+        """Manage context menu (right-click) for an item of the directory"""
         if self.currentItem() is None:
             return
         current_item = self.currentItem()
         if type(current_item) != CSDirectoryWidgetItem:
-            return
+            menu = QMenu(self)
+            new_item_action = menu.addAction(self.tr("New"))
+            chosen_action = menu.exec(self.viewport().mapToGlobal(pos))
+            if current_item == self.item_templates:
+                if chosen_action == new_item_action:
+                    self.newcharactertemplate_item()
+        else:
+            menu = QMenu(self)
+            remove_pair_action = menu.addAction(self.tr("Delete"))
+            chosen_action = menu.exec(self.viewport().mapToGlobal(pos))
+            if chosen_action == remove_pair_action:
+                self.delete_item(current_item)
 
-        menu = QMenu(self)
-        remove_pair_action = menu.addAction(self.tr("Delete"))
-        chosen_action = menu.exec(self.viewport().mapToGlobal(pos))
-
-
-        if chosen_action == remove_pair_action:
-            self.delete_item(current_item)
+    def newcharactertemplate_item(self):
+        new_templatelang = CSCharacterTemplateLang()
+        item_widget = CSCharacterTemplateTabWidget(new_templatelang,self.session)
+        self._target_tab.show_tab('new template',item_widget)
 
     def delete_item(self, item_to_delete:CSDirectoryWidgetItem) -> None:
         """Remove the item from the list, and disable it in the DB"""

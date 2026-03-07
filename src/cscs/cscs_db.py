@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select,delete
 
 from models import CSFocusLang, CSCharacterTypeLang, CSAbilityLang,Language,CSDescriptorLang,CSFlavorLang
-from models import CSFocus, CSCharacterType, CSAbility,CSDescriptor,CSFlavor
+from models import CSFocus, CSCharacterType, CSAbility,CSDescriptor,CSFlavor,CSCharacterTemplateLang
 
 
 import settings
@@ -30,6 +30,10 @@ class CSCGDB():
     @staticmethod
     def get_types(session):
         return session.scalars(select(CSCharacterTypeLang).join(Language).where(Language.id==settings.LANG_ID).order_by('name'))
+
+    @staticmethod
+    def get_charactertemplates(session):
+        return session.scalars(select(CSCharacterTemplateLang).join(Language).where(Language.id==settings.LANG_ID).order_by('name'))
 
     @staticmethod
     def get_descriptors(session):

@@ -14,6 +14,7 @@ class RankedUniqueAbilityDialog(QtWidgets.QDialog):
         self.ui.setupUi(self)
         abilities = CSCGDB.get_abilities(self.session)
         self.ui.abilityListWidget.load_abilities(abilities)
+        self.ui.abilityListWidget.itemDoubleClicked.connect(self.accept)
         self.ui.buttonBox.accepted.connect(self.accept)
         self.ui.buttonBox.rejected.connect(self.reject)
 
