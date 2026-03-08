@@ -19,14 +19,15 @@ class Language(Base):
     __tablename__ = "csqt_language"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
-    ab_langs: Mapped["CSAbilityLang"] = relationship(back_populates="language")
-    focus_langs: Mapped["CSFocusLang"] = relationship(back_populates="language")
-    descriptorcharacteristic_langs: Mapped["CSDescriptorCharacteristicLang"] = relationship(back_populates="language")
-    flavor_langs: Mapped["CSFlavorLang"] = relationship(back_populates="language")
-    charactertype_langs: Mapped["CSCharacterTypeLang"] = relationship(back_populates="language")
-    cypher_langs: Mapped["CSCypherLang"] = relationship(back_populates="language")
-    descriptor_langs: Mapped["CSDescriptorLang"] = relationship(back_populates="language")
-    charactertemplate_langs: Mapped["CSCharacterTemplateLang"] = relationship(back_populates="language")
+    ab_langs: Mapped[List["CSAbilityLang"]] = relationship(back_populates="language")
+    focus_langs: Mapped[List["CSFocusLang"]] = relationship(back_populates="language")
+    descriptorcharacteristic_langs: Mapped[List["CSDescriptorCharacteristicLang"]] = relationship(back_populates="language")
+    flavor_langs: Mapped[List["CSFlavorLang"]] = relationship(back_populates="language")
+    charactertype_langs: Mapped[List["CSCharacterTypeLang"]] = relationship(back_populates="language")
+    cypher_langs: Mapped[List["CSCypherLang"]] = relationship(back_populates="language")
+    descriptor_langs: Mapped[List["CSDescriptorLang"]] = relationship(back_populates="language")
+    charactertemplate_langs: Mapped[List["CSCharacterTemplateLang"]] = relationship(back_populates="language")
+    setting_langs: Mapped[List["CSSettingLang"]] = relationship(back_populates="language")
 
 # association table between tables abilities and focusabilities
 # https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html#many-to-many
@@ -170,6 +171,17 @@ descriptor_characteristics_table = Table(
     Column("descriptorcharacteristic_id", ForeignKey("csqt_descriptorcharacteristic.id")),
 )
 
+# association table between tables charactertemplate for type and foci
+charactertemplate_charactertype_table = Table(
+    "csqt_charactertemplate_charactertype",
+    Base.metadata,
+    Column("charactertemplate_id", ForeignKey("csqt_charactertemplate.id")),
+    Column("charactertype_id", ForeignKey("csqt_charactertype.id")),
+)
+
+########################################################
+#  ABILITY
+########################################################
 class CSAbility(Base):
     __tablename__ = "csqt_ability"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -269,8 +281,9 @@ class CSAbilityLang(Base):
     def __init__(self, name:str, description:str='',stat:str=''):
         self.name = name
         self.description = description
-        self.cs_page = cs_page
         self.stat = stat
+        self.lang_id = settings.LANG_ID
+        self.ability = CSAbility(name)
 
     def get_shortdescription(self):
         if len(self.description) > 150:
@@ -278,6 +291,9 @@ class CSAbilityLang(Base):
         else:
             return self.description
 
+########################################################
+#  FOCUS
+########################################################
 class CSFocus(Base):
     """wrapper for a Focus"""
     __tablename__ = "csqt_focus"
@@ -298,7 +314,7 @@ class CSFocus(Base):
     abilities_tier5: Mapped["CSFocusAbilities"] = relationship(foreign_keys="CSFocus.abilities_tier5_id")
     abilities_tier6_id = mapped_column(ForeignKey("csqt_focusabilities.id"))
     abilities_tier6: Mapped["CSFocusAbilities"] = relationship(foreign_keys="CSFocus.abilities_tier6_id")
-    charactertemplates: Mapped["CSCharacterTemplate"] = relationship(back_populates="focus")
+    charactertemplatefoci: Mapped[List["CSCharacterTemplateFocus"]] = relationship(back_populates="focus")
 
     def __init__(self, name:str, cs_page:str=''):
         self.name = name
@@ -413,6 +429,10 @@ class CSFocusAbilities(Base):
     # focus_ab_tier5: Mapped["CSFocus"] = relationship(back_populates="abilities_tier5")
     # focus_ab_tier6: Mapped["CSFocus"] = relationship(back_populates="abilities_tier6")
 
+########################################################
+#  DESCRIPTOR
+########################################################
+
 # association table between tables descriptor and initialink
 # https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html#many-to-many
 descriptor_initiallink_table = Table(
@@ -505,6 +525,9 @@ class CSInitialLinkLang(Base):
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
 
 
+########################################################
+#  FLAVOR
+########################################################
 class CSFlavor(Base):
     """wrapper for a Flavor"""
     __tablename__ = "csqt_flavor"
@@ -541,7 +564,7 @@ class CSFlavor(Base):
         secondary=character_flavor_table,
         back_populates="flavors"
         ) 
-    charactertemplates: Mapped["CSCharacterTemplate"] = relationship(back_populates="flavor")
+    charactertemplatetypesflavor: Mapped["CSCharacterTemplateTypeFlavor"] = relationship(back_populates="flavor")
 
     def __init__(self, name:str, cs_page:str='', description:str='') -> None:
         self.name = name
@@ -599,6 +622,9 @@ class CSFlavorLang(Base):
         self.description = description
         self.cs_page = cs_page
 
+########################################################
+#  CHARACTER TYPE
+########################################################
 class CSCharacterType(Base):
     """wrapper for a Character Type"""
     __tablename__ = "csqt_charactertype"
@@ -637,9 +663,9 @@ class CSCharacterType(Base):
         secondary=type_abilities_tier6_table,
         back_populates="typeabilities_rank6"
         )
-    locales: Mapped["CSCharacterTypeLang"] = relationship(back_populates="charactertype")
+    locales: Mapped[List["CSCharacterTypeLang"]] = relationship(back_populates="charactertype")
     characters: Mapped["CSCharacter"] = relationship(back_populates="charactertype")
-    charactertemplates: Mapped["CSCharacterTemplate"] = relationship(back_populates="charactertype")
+    charactertemplatetypesflavor:Mapped[List["CSCharacterTemplateTypeFlavor"]] = relationship(back_populates="charactertype")
 
 class CSCharacterTypeLang(Base):
     __tablename__ = "csqt_charactertypelang"
@@ -650,7 +676,9 @@ class CSCharacterTypeLang(Base):
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="charactertype_langs")
 
-
+########################################################
+#  CYPHER
+########################################################
 class CSCypher(Base):
     """wrapper for a Cypher"""
     __tablename__ = "csqt_cypher"
@@ -661,7 +689,7 @@ class CSCypher(Base):
     is_manifeste: Mapped[bool] = mapped_column(Boolean)
     is_fantastic: Mapped[bool] = mapped_column(Boolean)
     is_subtle: Mapped[bool] = mapped_column(Boolean)
-    locales: Mapped["CSCypherLang"] = relationship(back_populates="cypher")
+    locales: Mapped[List["CSCypherLang"]] = relationship(back_populates="cypher")
     characters: Mapped[List["CSCharacter"]] = relationship(
         secondary=character_cypher_table,
         back_populates="cyphers"
@@ -680,6 +708,9 @@ class CSCypherLang(Base):
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="cypher_langs")
 
+########################################################
+#  CHARACTER
+########################################################
 class CSCharacter(Base):
     """wrapper for a Character"""
     __tablename__ = "csqt_character"
@@ -724,22 +755,23 @@ class CSCharacterAbility(Base):
         back_populates="character_abilities"
         )
 
+########################################################
+#  CHARACTER TEMPLATE
+########################################################
+
 class CSCharacterTemplate(Base):
     """wrapper for a Character Template"""
     __tablename__ = "csqt_charactertemplate"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
-    charactertype_id = mapped_column(ForeignKey("csqt_charactertype.id"))
-    charactertype: Mapped["CSCharacterType"] = relationship(back_populates="charactertemplates")
-    focus_id = mapped_column(ForeignKey("csqt_focus.id"))
-    focus: Mapped["CSFocus"] = relationship(back_populates="charactertemplates")
-    flavor_id = mapped_column(ForeignKey("csqt_flavor.id"))
-    flavor: Mapped["CSFlavor"] = relationship(back_populates="charactertemplates")
-    locales: Mapped["CSCharacterTemplateLang"] = relationship(back_populates="charactertemplate")
+    charactertemplatetypes:Mapped[List["CSCharacterTemplateType"]] = relationship(back_populates="charactertemplate")
+    locales: Mapped[List["CSCharacterTemplateLang"]] = relationship(back_populates="charactertemplate")
+    setting_id = mapped_column(ForeignKey("csqt_setting.id"))
+    setting: Mapped["CSSetting"] = relationship(back_populates="charactertemplates")
+    charactertemplatefoci:Mapped[List["CSCharacterTemplateFocus"]] = relationship(back_populates="charactertemplate")
 
     def __init__(self,name=''):
         self.name = name
-
 
 class CSCharacterTemplateLang(Base):
     __tablename__ = "csqt_charactertemplatelang"
@@ -756,3 +788,52 @@ class CSCharacterTemplateLang(Base):
         self.description = description
         self.lang_id = settings.LANG_ID
         self.charactertemplate = CSCharacterTemplate(name=name)
+
+class CSCharacterTemplateType(Base):
+    """wrapper for a type for a character template"""
+    __tablename__ = "csqt_charactertemplate_type"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    charactertemplate_id = mapped_column(ForeignKey("csqt_charactertemplate.id"))
+    charactertemplate:Mapped["CSCharacterTemplate"] = relationship(back_populates="charactertemplatetypes")
+    charactertemplatetypesflavor:Mapped[List["CSCharacterTemplateTypeFlavor"]] = relationship(back_populates="charactertemplate_type")
+
+class CSCharacterTemplateTypeFlavor(Base):
+    __tablename__ = "csqt_charactertemplate_charactertypes"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    charactertemplate_type_id = mapped_column(ForeignKey("csqt_charactertemplate_type.id"))
+    charactertemplate_type:Mapped["CSCharacterTemplateType"] = relationship(back_populates="charactertemplatetypesflavor")
+    charactertype_id = mapped_column(ForeignKey("csqt_charactertype.id"))
+    charactertype:Mapped["CSCharacterType"] = relationship(back_populates="charactertemplatetypesflavor")
+    flavor_id = mapped_column(ForeignKey("csqt_flavor.id"))
+    flavor: Mapped["CSFlavor"] = relationship(back_populates="charactertemplatetypesflavor")
+
+class CSCharacterTemplateFocus(Base):
+    __tablename__ = "csqt_charactertemplate_foci"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    charactertemplate_id = mapped_column(ForeignKey("csqt_charactertemplate.id"))
+    charactertemplate:Mapped["CSCharacterTemplate"] = relationship(back_populates="charactertemplatefoci")
+    focus_id = mapped_column(ForeignKey("csqt_focus.id"))
+    focus: Mapped["CSFocus"] = relationship(back_populates="charactertemplatefoci")
+
+
+########################################################
+#  SETTING
+########################################################
+class CSSetting(Base):
+    """wrapper for a setting ot a genre"""
+    __tablename__ = "csqt_setting"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(50))
+    locales: Mapped[List["CSSettingLang"]] = relationship(back_populates="setting")
+    charactertemplates:Mapped[List["CSCharacterTemplate"]] = relationship(back_populates="setting")
+
+class CSSettingLang(Base):
+    __tablename__ = "csqt_settinglang"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(50))
+    description: Mapped[str] = mapped_column(Text)
+    lang_id = mapped_column(ForeignKey("csqt_language.id"))
+    language: Mapped["Language"] = relationship(back_populates="setting_langs")
+    setting_id = mapped_column(ForeignKey("csqt_setting.id"))
+    setting: Mapped["CSSetting"] = relationship(back_populates="locales")
+

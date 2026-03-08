@@ -3,5 +3,6 @@
         <file>CSCS/Main.qml</file>
         <file>tst_mainwindow.qml</file>
         <file>CSCS/CSDirectoryTreeDelegate.qml</file>
+        <file>src/cscs/resources/cropped-Cypher-System-Bug-192x192.png</file>
     </qresource>
 </RCC>

@@ -11,6 +11,7 @@ files = [
 	"qml.qrc",
 	"src/cscs/qt/Cypher_System_Character_Sheet_fr_FR.ts",
 	"src/cscs/qt/ability_widgets.py",
+	"src/cscs/qt/charactertemplate_form.ui",
 	"src/cscs/qt/dialog_selectrankedability.ui",
 	"src/cscs/qt/flavor_tab.ui",
 	"src/cscs/qt/rankedability_delegate.py",
