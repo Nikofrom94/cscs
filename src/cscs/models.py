@@ -10,7 +10,7 @@ from sqlalchemy import Column
 from sqlalchemy import Table
 from sqlalchemy import select
 
-import settings
+from settings import CSCSSettings
 
 class Base(DeclarativeBase):
     pass
@@ -282,7 +282,7 @@ class CSAbilityLang(Base):
         self.name = name
         self.description = description
         self.stat = stat
-        self.lang_id = settings.LANG_ID
+        self.lang_id = CSCSSettings.getLangID()
         self.ability = CSAbility(name)
 
     def get_shortdescription(self):
@@ -667,6 +667,9 @@ class CSCharacterType(Base):
     characters: Mapped["CSCharacter"] = relationship(back_populates="charactertype")
     charactertemplatetypesflavor:Mapped[List["CSCharacterTemplateTypeFlavor"]] = relationship(back_populates="charactertype")
 
+    def __repr__(self):
+        return f"CSCharacterType {self.id} = {self.name}"
+
 class CSCharacterTypeLang(Base):
     __tablename__ = "csqt_charactertypelang"
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -676,6 +679,8 @@ class CSCharacterTypeLang(Base):
     lang_id = mapped_column(ForeignKey("csqt_language.id"))
     language: Mapped["Language"] = relationship(back_populates="charactertype_langs")
 
+    def __repr__(self):
+        return f"CSCharacterTypeLang {self.id} = {self.name}"
 ########################################################
 #  CYPHER
 ########################################################
@@ -764,7 +769,7 @@ class CSCharacterTemplate(Base):
     __tablename__ = "csqt_charactertemplate"
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
-    charactertemplatetypes:Mapped[List["CSCharacterTemplateType"]] = relationship(back_populates="charactertemplate")
+    charactertemplatetypeflavor:Mapped[List["CSCharacterTemplateTypeFlavor"]] = relationship(back_populates="charactertemplate")
     locales: Mapped[List["CSCharacterTemplateLang"]] = relationship(back_populates="charactertemplate")
     setting_id = mapped_column(ForeignKey("csqt_setting.id"))
     setting: Mapped["CSSetting"] = relationship(back_populates="charactertemplates")
@@ -786,26 +791,31 @@ class CSCharacterTemplateLang(Base):
     def __init__(self, name='', description=''):
         self.name = name
         self.description = description
-        self.lang_id = settings.LANG_ID
+        self.lang_id = CSCSSettings.getLangID()
         self.charactertemplate = CSCharacterTemplate(name=name)
 
-class CSCharacterTemplateType(Base):
-    """wrapper for a type for a character template"""
-    __tablename__ = "csqt_charactertemplate_type"
+class CSCharacterTemplateTypeFlavor(Base):
+    __tablename__ = "csqt_charactertemplate_typeflavor"
     id: Mapped[int] = mapped_column(primary_key=True)
     charactertemplate_id = mapped_column(ForeignKey("csqt_charactertemplate.id"))
-    charactertemplate:Mapped["CSCharacterTemplate"] = relationship(back_populates="charactertemplatetypes")
-    charactertemplatetypesflavor:Mapped[List["CSCharacterTemplateTypeFlavor"]] = relationship(back_populates="charactertemplate_type")
-
-class CSCharacterTemplateTypeFlavor(Base):
-    __tablename__ = "csqt_charactertemplate_charactertypes"
-    id: Mapped[int] = mapped_column(primary_key=True)
-    charactertemplate_type_id = mapped_column(ForeignKey("csqt_charactertemplate_type.id"))
-    charactertemplate_type:Mapped["CSCharacterTemplateType"] = relationship(back_populates="charactertemplatetypesflavor")
+    charactertemplate:Mapped["CSCharacterTemplate"] = relationship(back_populates="charactertemplatetypeflavor")
     charactertype_id = mapped_column(ForeignKey("csqt_charactertype.id"))
     charactertype:Mapped["CSCharacterType"] = relationship(back_populates="charactertemplatetypesflavor")
     flavor_id = mapped_column(ForeignKey("csqt_flavor.id"))
     flavor: Mapped["CSFlavor"] = relationship(back_populates="charactertemplatetypesflavor")
+
+    def __init__(self, charactertemplate:CSCharacterTemplate=None, charactertype:CSCharacterType=None):
+        self.charactertemplate = charactertemplate
+        self.charactertype = charactertype
+
+    def getcharactertype_lang(self,session) -> CSCharacterTypeLang:
+        return session.scalars(select(CSCharacterTypeLang).join(Language).where(Language.id==CSCSSettings.getLangID())).first()
+
+    def getflavor_lang(self,session) -> CSFlavorLang:
+        return session.scalars(select(CSFlavorLang).join(Language).where(Language.id==CSCSSettings.getLangID())).first()
+
+    def __repr__(self):
+        return f"CSCharacterTemplateTypeFlavor for {self.charactertemplate} with {self.charactertype}/{self.flavor}"
 
 class CSCharacterTemplateFocus(Base):
     __tablename__ = "csqt_charactertemplate_foci"

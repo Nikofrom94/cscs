@@ -1,5 +1,6 @@
 [project]
 name = "Cypher System Character Sheet"
+version = "0.1.0"
 
 [tool.pyside6-project]
 files = [
@@ -7,12 +8,15 @@ files = [
 	"CSCS/csdirectory_model.py",
 	"CSCS/qmldir",
 	"cscs_db.py",
+	"essai.py",
 	"main.py",
 	"qml.qrc",
 	"src/cscs/qt/Cypher_System_Character_Sheet_fr_FR.ts",
 	"src/cscs/qt/ability_widgets.py",
 	"src/cscs/qt/charactertemplate_form.ui",
+	"src/cscs/qt/charactertemplatetypeflavorview.py",
 	"src/cscs/qt/dialog_selectrankedability.ui",
+	"src/cscs/qt/dialog_selecttypeflavor.ui",
 	"src/cscs/qt/flavor_tab.ui",
 	"src/cscs/qt/rankedability_delegate.py",
 	"src/cscs/qt/rankedability_dialog.py",

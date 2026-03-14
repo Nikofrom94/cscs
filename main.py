@@ -8,6 +8,8 @@ from PySide6.QtQml import QQmlApplicationEngine
 from cscs_db import Session,Database
 from CSCS.csdirectory_model import CSDirectoryModel
 
+from settings import CSCSSettings
+
 if __name__ == '__main__':
 
     # initialize DB session

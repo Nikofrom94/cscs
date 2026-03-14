@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
-    <height>425</height>
+    <width>561</width>
+    <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="5" column="0">
+   <item row="8" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
@@ -32,18 +32,45 @@
      <item>
       <widget class="QPushButton" name="saveButton">
        <property name="text">
-        <string>PushButton</string>
+        <string>Save</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
+   <item row="6" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Foci</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addFocusButton">
+       <property name="text">
+        <string>Add</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item row="0" column="0">
     <layout class="QFormLayout" name="formLayout">
@@ -58,56 +85,79 @@
       <widget class="QLineEdit" name="nameLineEdit"/>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="genreLabel">
+      <widget class="QLabel" name="settingLabel">
        <property name="text">
-        <string>Genre</string>
+        <string>Setting</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="genreLineEdit"/>
+      <widget class="QComboBox" name="settingComboBox"/>
      </item>
     </layout>
+   </item>
+   <item row="4" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Types and Flavors</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addTypeFlavorButton">
+       <property name="text">
+        <string>Add</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QFormLayout" name="formLayout_2"/>
    </item>
    <item row="3" column="0">
     <widget class="QTextEdit" name="descriptionTextEdit"/>
    </item>
-   <item row="1" column="0">
-    <layout class="QFormLayout" name="formLayout_2">
-     <item row="0" column="0">
-      <widget class="QLabel" name="typeLabel">
-       <property name="text">
-        <string>Type</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="typeComboBox"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="flavorLabel">
-       <property name="text">
-        <string>Flavor</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="flavorComboBox"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="focusLabel">
-       <property name="text">
-        <string>Focus</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QComboBox" name="focusComboBox"/>
-     </item>
-    </layout>
+   <item row="7" column="0">
+    <widget class="QListWidget" name="fociList"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="CharacterTemplateTypeFlavorView" name="typeflavorListView"/>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CharacterTemplateTypeFlavorView</class>
+   <extends>QListView</extends>
+   <header>qt.charactertemplatetypeflavorview</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

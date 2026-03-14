@@ -8,9 +8,9 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 #     pyside6-uic form.ui -o ui_form.py, or
 #     pyside2-uic form.ui -o ui_form.py
 from qt.main_form import Ui_MainWindow
-from cscs_db import Session,CSCGDB
+from cscs_db import Session
 
-import settings
+from settings import CSCSSettings
 
 APP_NAME = "Cypher System Character Sheet"
 
@@ -19,7 +19,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.setObjectName(APP_NAME)
+        self.setObjectName(CSCSSettings.APPNAME)
         self.ui.mainTree.fill_browser(target_tab=self.ui.mainTab,session=session)
 
 if __name__ == "__main__":
