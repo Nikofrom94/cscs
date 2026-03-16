@@ -20,7 +20,7 @@ class CSCharacterTemplateTabWidget(QWidget):
         self.ui = Ui_ChararacterTemplateTab()
         self.ui.setupUi(self)
 
-        self.ui.typeflavorListView.load(session, self._charactertemplate.charactertemplatetypeflavor)
+        self.ui.typeflavorListView.load(session, self._charactertemplate.charactertemplatetypeflavor,self._charactertemplate)
 
         self.ui.nameLineEdit.setText(self._charactertemplate.name)
         self.ui.descriptionTextEdit.setText((self._charactertemplateLang.description))

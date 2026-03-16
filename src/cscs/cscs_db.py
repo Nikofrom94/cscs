@@ -33,6 +33,11 @@ class CSCGDB():
         return session.scalars(select(CSCharacterTypeLang).join(Language).where(Language.id==CSCSSettings.getLangID()).order_by('name'))
 
     @staticmethod
+    def get_charactertype_lang(session):
+        return session.scalars(select(CSCharacterTypeLang).join(Language).where(Language.id==CSCSSettings.getLangID()).order_by('name'))
+
+
+    @staticmethod
     def get_firsttype(session):
         return session.scalars(select(CSCharacterTypeLang).join(Language).where(Language.id==CSCSSettings.getLangID()).order_by('name')).first()
 
